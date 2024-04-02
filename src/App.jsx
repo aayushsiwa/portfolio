@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import NavBar from './temp/NavBar';
 import Home from './temp/Home';
 import About from './temp/About';
@@ -13,6 +14,7 @@ function App() {
   }, []);
   return (
     <>
+      <Analytics />
       <NavBar />
       <Home />
       <About />
