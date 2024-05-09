@@ -29,7 +29,7 @@ export default function About() {
           <div className="text-side">
             <h3>About me</h3>
             <h4>
-              Front-end Developer <br /> based in Belgrade, Serbia 📍
+              Front-end Developer <br /> based in New Delhi, India 📍
             </h4>
             <p>
               Hey, my name is Aditya, and I'm a Frontend Developer. My passion is to
