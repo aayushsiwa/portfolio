@@ -41,6 +41,7 @@ export default function Projects() {
             </div>
             <div className="flex gap-10 text-3xl">
               <a
+                rel="noreferrer"
                 target="_blank"
                 href="https://github.com/senaditya/jovian-v2"
                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
@@ -49,6 +50,7 @@ export default function Projects() {
                 <img src={github} alt="github" />
               </a>
               <a
+                rel="noreferrer"
                 target="_blank"
                 href="https://jovian-v2.vercel.app"
                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
@@ -74,6 +76,7 @@ export default function Projects() {
             <div className="flex gap-10 text-3xl">
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://github.com/senaditya/python-tutorials"
                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
               >
@@ -81,6 +84,7 @@ export default function Projects() {
                 <img src={github} alt="github" />
               </a>
               <a
+                rel="noreferrer"
                 target="_blank"
                 href="https://python-tutorials.vercel.app"
                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
