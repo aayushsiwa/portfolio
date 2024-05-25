@@ -97,7 +97,7 @@ export default function Projects() {
           <div className="">
             <div className="h-[50vh] w-[40vw] overflow-hidden hover:overflow-auto rounded-[2rem]">
               <img
-                src="https://raw.githubusercontent.com/senaditya/python-tutorials/master/api/static/screenshot.png"
+                src="https://raw.githubusercontent.com/senaditya/python-tutorials/main/screenshot.png"
                 className=""
                 alt="Project Screenshot"
               />
