@@ -6,21 +6,21 @@ export default function NavBar() {
     };
     return (
         <>
-            <nav id='navbar'>
-                <a className='logo' href="#home">
+            <nav id='' className='w-full h-auto py-[25px] ps-[40px] pe-[50px] flex justify-between fixed bg-white top-0 left-0 z-10 align-middle shadow-md text-[1.7rem]'>
+                <a className='text-[#2d2e32] font-extrabold text-4xl' href="#home">
                     <h3>Aditya.dev</h3></a>
-                <ul className="d-flex mt-2 mb-2 nav nav-pills">
-                    <li className='nav-item me-2'>
-                        <a className='nav-link' href="#home">Home</a>
+                <ul className="flex gap-8">
+                    <li className=''>
+                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#home">Home</a>
                     </li>
-                    <li className='nav-item me-2'>
-                        <a className='nav-link' href="#about">About</a>
+                    <li className=''>
+                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#about">About</a>
                     </li>
-                    <li className='nav-item me-2'>
-                        <a className='nav-link' href="#projects">Projects</a>
+                    <li className=''>
+                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#projects">Projects</a>
                     </li>
-                    <li className='nav-item me-2'>
-                        <a className='nav-link' href="#contact">Contact</a>
+                    <li className=''>
+                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#contact">Contact</a>
                     </li>
                     <li>
                         <svg
