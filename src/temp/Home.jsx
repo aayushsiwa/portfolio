@@ -1,20 +1,42 @@
-import React from 'react'
+import React from "react";
 
 export default function Home() {
+  const skills = [
+    "html",
+    "css",
+    "tailwind",
+    "bootstrap",
+    "svelte",
+    "react",
+    "next",
+    "flask",
+    "django",
+    "nodejs",
+    "ts",
+    "js",
+    "postgres",
+    "mysql",
+  ];
   return (
-    <section id="home" className="hero">
-      <div className="container">
-        <div className="content">
-          <div className="hero-main">
-            <div className="hero-text">
-              <h1>Front-End React Developer 👋🏼</h1>
-              
-              <p>
-                Hi, I'm Aditya Sen. A passionate Front-end React Developer
-                based in New Delhi, India. 📍
+    <section
+      id="home"
+      className="flex flex-col w-full h-[100vh] bg-[#f9f9f9] relative"
+    >
+      <div className="max-w-[107rem] mx-auto pb-10">
+        <div className="flex justify-center items-center h-[65rem] gap-40 relative">
+          <div className="flex justify-center items-center gap-40 h-auto">
+            <div className="flex flex-col max-w-3xl relative">
+              <h1 className="text-[5.5rem] leading-[6rem] mb-8 mt-8 text-[#2d2e32] font-bold">
+                Web Developer 👋🏼
+              </h1>
+
+              <p className="text-[1.8rem] leading-relaxed font-medium text-[#555555] font-[Mulish]">
+                Hi, I'm Aditya Sen. A passionate Web Developer based in New
+                Delhi, India. 📍
               </p>
-              <span>
+              <span className="flex gap-5 my-10">
                 <a
+                  className="text-5xl text-[#2d2e32] hover:text-[#147efb]"
                   aria-label="linkedin"
                   rel="noreferrer"
                   target="_blank"
@@ -40,6 +62,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
+                  className="text-5xl text-[#2d2e32] hover:text-[#147efb]"
                   aria-label="github"
                   rel="noreferrer"
                   target="_blank"
@@ -55,7 +78,7 @@ export default function Home() {
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="tabler-icon tabler-icon-brand-github"
+                    className=""
                   >
                     <path
                       d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 
@@ -68,45 +91,26 @@ export default function Home() {
             </div>
             <div className="hero-img" />
           </div>
-          <div className="skills">
-            <p>Tech Stack</p>
+          <div className="flex text-[1.7rem] text-[#767676] items-center absolute bottom-0 left-0">
+            <p className="me-28 pe-8 border-r-2 text-[#2d2e32] border-[rgba(45, 46, 50, 0.5)] font-semibold font-[Mulish]">
+              Tech Stack
+            </p>
             <div className="logos">
-              <ul>
-                <li>
-                  <img
-                    src="https://skillicons.dev/icons?i=html,css"
-                    alt="skill-icon"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://skillicons.dev/icons?i=js,ts"
-                    alt="skill-icon"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://skillicons.dev/icons?i=react,next"
-                    alt="skill-icon"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://skillicons.dev/icons?i=tailwind,scss"
-                    alt="skill-icon"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://skillicons.dev/icons?i=python,flask"
-                    alt="skill-icon"
-                  />
-                </li>
+              <ul className="list-none flex flex-wrap gap-4 gap-y-8">
+                {skills.map((skill) => (
+                  <li key={skill}>
+                    <img
+                      className="transition ease-in duration-300 hover:scale-125 hover:translate-y-[-1rem]"
+                      src={`https://skillicons.dev/icons?i=${skill}`}
+                      alt={`${skill}-icon`}
+                    />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
