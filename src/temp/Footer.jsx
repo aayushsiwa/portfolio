@@ -14,7 +14,7 @@ export default function Footer() {
               aria-label="linkedin"
               target="_blank"
               rel="noreferrer"
-              href="https://www.linkedin.com/in/senaditya"
+              href="https://www.linkedin.com/in/aayush-siwach"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function Footer() {
               aria-label="github"
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/senaditya"
+              href="https://github.com/aayushsiwa"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
