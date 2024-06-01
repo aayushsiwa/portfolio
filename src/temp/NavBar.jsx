@@ -8,7 +8,7 @@ export default function NavBar() {
         <>
             <nav id='' className='w-full h-auto py-[25px] ps-[40px] pe-[50px] flex justify-between fixed bg-white top-0 left-0 z-10 align-middle shadow-md text-[1.7rem]'>
                 <a className='text-[#2d2e32] font-extrabold text-4xl' href="#home">
-                    <h3>Aditya.dev</h3></a>
+                    <h3>Aayush.is-a.dev</h3></a>
                 <ul className="flex gap-8">
                     <li className=''>
                         <a className='transition-all font-semibold hover:text-[#147efb]' href="#home">Home</a>
