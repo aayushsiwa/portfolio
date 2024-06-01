@@ -15,7 +15,7 @@ export default function Projects() {
                     <div className="">
                         <div className="h-[50vh] w-[40vw] overflow-hidden hover:overflow-auto rounded-[2rem]">
                             <img
-                                src="https://raw.githubusercontent.com/aayushsiwa/jovian-v2/master/api/static/screenshot.png"
+                                src="https://raw.githubusercontent.com/aayushsiwa/jovian/master/api/static/screenshot.png"
                                 className=""
                                 alt="Project Screenshot"
                             />
@@ -99,7 +99,7 @@ export default function Projects() {
                             </a>
                         </div>
                     </div>
-                    <div className="">
+                    <div className="mt-4">
                         <div className="h-[50vh] w-[40vw] overflow-hidden hover:overflow-auto rounded-[2rem] mt-2">
                             <img
                                 src="https://raw.githubusercontent.com/aayushsiwa/python-tutorials/main/screenshot.png"
