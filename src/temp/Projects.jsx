@@ -55,7 +55,7 @@ export default function Projects() {
                             <a
                                 rel="noreferrer"
                                 target="_blank"
-                                href="https://jovian-v2.vercel.app"
+                                href="https://jovian-aplha.vercel.app"
                                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
                             >
                                 <span>Live Demo</span>
@@ -102,7 +102,7 @@ export default function Projects() {
                     <div className="mt-4">
                         <div className="h-[50vh] w-[40vw] overflow-hidden hover:overflow-auto rounded-[2rem] mt-2">
                             <img
-                                src="https://raw.githubusercontent.com/aayushsiwa/python-tutorials/main/screenshot.png"
+                                src="https://raw.githubusercontent.com/aayushsiwa/python-tutorials/master/screenshot.png"
                                 className=""
                                 alt="Project Screenshot"
                             />
