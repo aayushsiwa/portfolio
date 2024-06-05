@@ -9,11 +9,11 @@ export default function Projects() {
             id="projects"
             className="bg-[#f9f9f9] py-60 px-60 gap-20 font-[Poppins]"
         >
-            <div className="">
-                {/* this is the card container */}
-                <div className="flex gap-20">
-                    <div className="">
-                        <div className="h-[50vh] w-[40vw] overflow-hidden hover:overflow-auto rounded-[2rem]">
+            <div>
+                {/* card container */}
+                <div className="px-2 py-20 w-full flex justify-center gap-2">
+                    <div className="lg:w-1/2">
+                        <div className=" h-96 overflow-hidden hover:overflow-auto lg:h-[40vh] rounded-b-none border lg:rounded-lg">
                             <img
                                 src="https://raw.githubusercontent.com/aayushsiwa/jovian/master/api/static/screenshot.png"
                                 className=""
@@ -21,35 +21,32 @@ export default function Projects() {
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col py-auto px-auto gap-y-20 text-center justify-center items-center">
-                        <div className="flex flex-col gap-y-16 ">
-                            <h2 className="font-bold text-[#2d2e32] text-5xl">
-                                Jovian Careers Website
-                            </h2>
-                            <p className="text-[#767676] text-4xl">
-                                I developed a Job Offerings application for
-                                Jovian using Flask, with MySQL on Aiven. This
-                                app streamlines the job application process,
-                                making it easier for job seekers to find and
-                                apply for positions, and for companies to manage
-                                applications efficiently. By integrating email
-                                notifications and hCaptcha for security, it
-                                ensures a smooth and secure experience. This
-                                application supports job seekers in finding
-                                employment opportunities, thus contributing to
-                                reducing unemployment and aiding in career
-                                growth, ultimately benefiting society by
-                                connecting talent with opportunities.
-                            </p>
-                        </div>
-                        <div className="flex gap-10 text-3xl">
+                    <div className="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg">
+                        <h2 className="text-3xl text-gray-800 font-bold">
+                            Jovian Careers Website
+                        </h2>
+                        <p className="mt-4 text-gray-600">
+                            A Job Offerings application for Jovian using Flask,
+                            with MySQL on Aiven. This app streamlines the job
+                            application process, making it easier for job
+                            seekers to find and apply for positions, and for
+                            companies to manage applications efficiently. By
+                            integrating email notifications and hCaptcha for
+                            security, it ensures a smooth and secure experience.
+                            This application supports job seekers in finding
+                            employment opportunities, thus contributing to
+                            reducing unemployment and aiding in career growth,
+                            ultimately benefiting society by connecting talent
+                            with opportunities.
+                        </p>
+                        <div className="mt-8 flex justify-center gap-40">
                             <a
                                 rel="noreferrer"
                                 target="_blank"
                                 href="https://github.com/aayushsiwa/jovian"
                                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
                             >
-                                <span>Code</span>
+                                {/* <span>Code</span> */}
                                 <img src={github} alt="github" />
                             </a>
                             <a
@@ -58,34 +55,31 @@ export default function Projects() {
                                 href="https://jovian-aplha.vercel.app"
                                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
                             >
-                                <span>Live Demo</span>
+                                {/* <span>Live Demo</span> */}
                                 <img src={live} alt="live demo" />
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-20">
-                    <div className="flex flex-col py-auto px-auto gap-y-20 text-center justify-center items-center">
-                        <div className="flex flex-col gap-y-16 ">
-                            <h2 className="font-bold text-[#2d2e32] text-5xl">
-                                Python Tutorials Website
-                            </h2>
-                            <p className="text-[#767676] text-4xl">
-                                I developed a Tutorials application for new
-                                learners using Django, with PostgresSQL on
-                                Render. This app provides users with basic
-                                tutorials to various fields in python
-                                programming.
-                            </p>
-                        </div>
-                        <div className="flex gap-10 text-3xl">
+                <div className="px-2 py-20 w-full flex justify-center gap-2">
+                    <div className="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg">
+                        <h2 className="text-3xl text-gray-800 font-bold">
+                            Python Tutorials Website
+                        </h2>
+                        <p className="mt-4 text-gray-600">
+                            A Tutorials application for new learners using
+                            Django, with PostgresSQL on Render. This app
+                            provides users with basic tutorials to various
+                            fields in python programming.
+                        </p>
+                        <div className="mt-8 flex justify-center gap-40">
                             <a
                                 target="_blank"
                                 rel="noreferrer"
                                 href="https://github.com/aayushsiwa/python-tutorials"
                                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
                             >
-                                <span>Code</span>
+                                {/* <span>Code</span> */}
                                 <img src={github} alt="github" />
                             </a>
                             <a
@@ -94,13 +88,13 @@ export default function Projects() {
                                 href="https://python-tutorials.vercel.app"
                                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
                             >
-                                <span>Live Demo</span>
+                                {/* <span>Live Demo</span> */}
                                 <img src={live} alt="live demo" />
                             </a>
                         </div>
                     </div>
-                    <div className="mt-4">
-                        <div className="h-[50vh] w-[40vw] overflow-hidden hover:overflow-auto rounded-[2rem] mt-2">
+                    <div className="lg:w-1/2">
+                        <div className=" h-96 overflow-hidden hover:overflow-auto lg:h-[40vh] rounded-b-none border lg:rounded-lg">
                             <img
                                 src="https://raw.githubusercontent.com/aayushsiwa/python-tutorials/master/screenshot.png"
                                 className=""

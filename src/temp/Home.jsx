@@ -32,8 +32,7 @@ export default function Home() {
 
                             <p className="text-[1.8rem] leading-relaxed font-medium text-[#555555] font-[Mulish]">
                                 Hi, I'm Aayush Siwach. A passionate Web
-                                Developer based in New
-                                Bhubaneshwar,Odisha,India.{" "}
+                                Developer based in Bhubaneshwar, Odisha, India.{" "}
                                 <a
                                     href="
                             https://maps.app.goo.gl/uAToS3VVq35UnpTc8"
