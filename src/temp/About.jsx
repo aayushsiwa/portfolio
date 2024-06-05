@@ -21,7 +21,7 @@ export default function About() {
                         />
                         <span className="w-50 h-50 absolute bg-white rounded-[50%] top-[24rem] ml-[30rem] right-[-8rem] hover:bg-[#147efb]">
                             <img
-                                className="w-[19rem] animate-[rotate_9s_linear_infinite]"
+                                className="w-[19rem] animate-rotate"
                                 src={text}
                                 alt="text"
                             />
@@ -35,7 +35,7 @@ export default function About() {
                             className="text-[2.5rem] font-[Poppins,sans-serif] leading-[3.9rem] mb-8 text-[#2d2e32] font-extrabold"
                             x
                         >
-                            Web Developer <br /> based in Bhubaneshwar,Odisha,
+                            Web Developer <br /> based in Bhubaneshwar, Odisha,
                             India
                             <a
                                 href="
