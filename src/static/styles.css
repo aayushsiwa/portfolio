@@ -151,8 +151,6 @@ body {
     }
 }
 
-
-
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -160,4 +158,25 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.project_screenshot :hover {
+    overflow-y: scroll;
+    /* transition: overflow-y 5s ease-in-out; */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(-70%);
+    }
+}
+
+.project_screenshot:hover {
+    animation: scroll 5s ease-out;
 }

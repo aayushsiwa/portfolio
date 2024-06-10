@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const handleMenuToggle = () => {
@@ -6,21 +6,48 @@ export default function NavBar() {
     };
     return (
         <>
-            <nav id='' className='w-full h-auto py-[25px] ps-[40px] pe-[50px] flex justify-between fixed bg-white top-0 left-0 z-10 align-middle shadow-md text-[1.7rem] z-50'>
-                <a className='text-[#2d2e32] font-extrabold text-4xl' href="#home">
-                    <h3>Aayush.is-a.dev</h3></a>
+            <nav
+                id=""
+                className="w-full h-auto py-[25px] ps-[40px] pe-[50px] flex justify-between fixed bg-white top-0 left-0 z-10 align-middle shadow-md text-[1.7rem]"
+            >
+                <a
+                    className="text-[#2d2e32] font-extrabold text-4xl"
+                    href="#home"
+                >
+                    <h3>Aayush.is-a.dev</h3>
+                </a>
                 <ul className="flex gap-8">
-                    <li className=''>
-                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#home">Home</a>
+                    <li className="">
+                        <a
+                            className="transition-all font-semibold hover:text-[#147efb]"
+                            href="#home"
+                        >
+                            Home
+                        </a>
                     </li>
-                    <li className=''>
-                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#about">About</a>
+                    <li className="">
+                        <a
+                            className="transition-all font-semibold hover:text-[#147efb]"
+                            href="#about"
+                        >
+                            About
+                        </a>
                     </li>
-                    <li className=''>
-                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#projects">Projects</a>
+                    <li className="">
+                        <a
+                            className="transition-all font-semibold hover:text-[#147efb]"
+                            href="#projects"
+                        >
+                            Projects
+                        </a>
                     </li>
-                    <li className=''>
-                        <a className='transition-all font-semibold hover:text-[#147efb]' href="#contact">Contact</a>
+                    <li className="">
+                        <a
+                            className="transition-all font-semibold hover:text-[#147efb]"
+                            href="#contact"
+                        >
+                            Contact
+                        </a>
                     </li>
                     <li>
                         <svg
@@ -41,11 +68,15 @@ export default function NavBar() {
                             <path d="M4 18l16 0" />
                         </svg>
                     </li>
-
                 </ul>
             </nav>
-            <div className={`mobile-nav ${isMenuOpen ? 'open-menu' : 'closed-menu'}`} onClick={handleMenuToggle}>
-                <span >
+            <div
+                className={`mobile-nav ${
+                    isMenuOpen ? "open-menu" : "closed-menu"
+                }`}
+                onClick={handleMenuToggle}
+            >
+                <span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={30}
@@ -78,5 +109,5 @@ export default function NavBar() {
                 </ul>
             </div>
         </>
-    )
+    );
 }
