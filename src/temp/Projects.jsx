@@ -16,7 +16,7 @@ export default function Projects() {
                         <div className=" h-96 overflow-hidden hover:overflow-auto lg:h-[40vh] rounded-b-none border lg:rounded-lg">
                             <img
                                 src="https://raw.githubusercontent.com/aayushsiwa/jovian/master/api/static/screenshot.png"
-                                className=""
+                                className="project_screenshot"
                                 alt="Project Screenshot"
                             />
                         </div>
@@ -97,9 +97,54 @@ export default function Projects() {
                         <div className=" h-96 overflow-hidden hover:overflow-auto lg:h-[40vh] rounded-b-none border lg:rounded-lg">
                             <img
                                 src="https://raw.githubusercontent.com/aayushsiwa/python-tutorials/master/screenshot.png"
-                                className=""
+                                className="project_screenshot"
                                 alt="Project Screenshot"
                             />
+                        </div>
+                    </div>
+                </div>
+                <div className="px-2 py-20 w-full flex justify-center gap-2">
+                    <div className="lg:w-1/2">
+                        <div className=" h-96 overflow-hidden hover:overflow-auto lg:h-[40vh] rounded-b-none border lg:rounded-lg">
+                            <img
+                                src="https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.jpeg"
+                                className="project_screenshot"
+                                alt="Project Screenshot"
+                            />
+                        </div>
+                    </div>
+                    <div className="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg">
+                        <h2 className="text-3xl text-gray-800 font-bold">
+                            GenieTalks Chatbot
+                        </h2>
+                        <p className="mt-4 text-gray-600">
+                            This project is a chat application that integrates
+                            with Google's Generative AI model for intelligent
+                            responses. Users can ask questions, receive
+                            responses, and view their chat history. The project
+                            demonstrates how to use Vite for the frontend and
+                            Express.js for the backend, leveraging Google's
+                            Generative AI for conversational capabilities.
+                        </p>
+                        <div className="mt-8 flex justify-center gap-40">
+                            <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://github.com/aayushsiwa/genietalks"
+                                className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
+                            >
+                                {/* <span>Code</span> */}
+                                <img src={github} alt="github" />
+                            </a>
+                            <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://genietalks.vercel.app"
+                                className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
+                            >
+                                {/* <span>Live Demo</span> */}
+                                <img src={live} alt="live demo" />
+                            </a>
                         </div>
                     </div>
                 </div>

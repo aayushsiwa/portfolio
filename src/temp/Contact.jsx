@@ -66,10 +66,10 @@ export default function Contact() {
                                     Mail
                                 </h3>
                                 <a
-                                    href="mailto:aayush13402@gmail.com"
+                                    href="mailto:aayush@mail.aayushsiwa.is-a.dev"
                                     className="text-[1.7rem] text-[#767676]"
                                 >
-                                    aayush13402@gmail.com
+                                    aayush@mail.aayushsiwa.is-a.dev
                                 </a>
                             </div>
                         </div>
