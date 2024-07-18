@@ -52,7 +52,7 @@ export default function Projects() {
                             <a
                                 rel="noreferrer"
                                 target="_blank"
-                                href="https://jovian-aplha.vercel.app"
+                                href="https://jovian-alpha.vercel.app"
                                 className="text-blue-500 flex items-center space-x-2 transition ease-in-out duration-300 hover:scale-110"
                             >
                                 {/* <span>Live Demo</span> */}
