@@ -1,7 +1,6 @@
-import React from "react";
 // import screenshot from "../static/screenshot.png";
-import github from "../static/github.svg";
-import live from "../static/live.svg";
+import github from "../assets/github.svg";
+import live from "../assets/live.svg";
 
 export default function Projects() {
     return (
