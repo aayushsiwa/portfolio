@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+// import "../assets/resume.pdf";
 
 export default function Contact() {
     return (

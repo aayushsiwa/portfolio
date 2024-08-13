@@ -1,7 +1,6 @@
-import React from "react";
-import emoji from "../static/working-emoji.png";
-import workpic from "../static/work.jpg";
-import text from "../static/text.svg";
+import emoji from "../assets/working-emoji.png";
+import workpic from "../assets/work.jpg";
+import text from "../assets/text.svg";
 
 export default function About() {
     return (
@@ -31,10 +30,7 @@ export default function About() {
                         <h3 className="text-[1.7rem] text-[#147efb] font-bold mb-4 uppercase">
                             About me
                         </h3>
-                        <h4
-                            className="text-[2.5rem] font-[Poppins,sans-serif] leading-[3.9rem] mb-8 text-[#2d2e32] font-extrabold"
-                            x
-                        >
+                        <h4 className="text-[2.5rem] font-[Poppins,sans-serif] leading-[3.9rem] mb-8 text-[#2d2e32] font-extrabold">
                             Web Developer <br /> based in Bhubaneshwar, Odisha,
                             India
                             <a
