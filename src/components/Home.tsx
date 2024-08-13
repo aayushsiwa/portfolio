@@ -1,3 +1,4 @@
+import geo from "../assets/geo.svg";
 
 export default function Home() {
     const skills = [
@@ -36,7 +37,7 @@ export default function Home() {
                                     href="
                             https://maps.app.goo.gl/uAToS3VVq35UnpTc8"
                                 >
-                                    📍
+                                    <img src={geo} alt="" />
                                 </a>
                             </p>
                             <span className="flex gap-5 my-10">

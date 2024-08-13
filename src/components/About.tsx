@@ -1,6 +1,7 @@
 import emoji from "../assets/working-emoji.png";
 import workpic from "../assets/work.jpg";
 import text from "../assets/text.svg";
+import geo from "../assets/geo.svg";
 
 export default function About() {
     return (
@@ -37,7 +38,7 @@ export default function About() {
                                 href="
                             https://maps.app.goo.gl/uAToS3VVq35UnpTc8"
                             >
-                                📍
+                                <img src={geo} alt="" />
                             </a>
                         </h4>
                         <p className="text-[1.7rem] font-[Mulish] text-[#767676] font-medium leading-9">
@@ -48,6 +49,17 @@ export default function About() {
                             <br />
                             My main stack currently is React/Next.js in
                             combination with Tailwind CSS and TypeScript.
+                            <br />
+                            <br />
+                            Checkout my resume
+                            <a
+                                href="https://1drv.ms/b/s!AsZYqOS4GAfwzBHEMTazIPwcI5W7"
+                                className="text-[#147efb]"
+                                target="_blank"
+                            >
+                                {" "}
+                                here.
+                            </a>
                         </p>
                     </div>
                 </div>
