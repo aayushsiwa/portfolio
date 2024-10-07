@@ -17,32 +17,32 @@ export default function Home() {
         "postgres",
         "mysql",
     ];
+
     return (
         <section
             id="home"
-            className="flex flex-col w-full h-[100vh] bg-[#f9f9f9] relative"
+            className="flex flex-col justify-center w-full h-screen bg-lightBg dark:bg-darkBg relative"
         >
-            <div className="max-w-[107rem] mx-auto pb-10">
-                <div className="flex justify-center items-center h-[65rem] gap-40 relative">
+            <div className="max-w-[80vw] mx-auto pb-10">
+                <div className="flex flex-col justify-center items-center h-[65rem] gap-32 relative">
                     <div className="flex justify-center items-center gap-40 h-auto">
                         <div className="flex flex-col max-w-3xl relative">
-                            <h1 className="text-[5.5rem] leading-[6rem] mb-8 mt-8 text-[#2d2e32] font-bold">
+                            <h1 className="text-6xl leading-[6rem] mb-8 mt-8 text-lightP dark:text-darkP font-bold">
                                 Web Developer 👋🏼
                             </h1>
 
-                            <p className="text-[1.8rem] leading-relaxed font-medium text-[#555555] font-[Mulish]">
-                                Hi, I'm Aayush Siwach. A passionate Web
-                                Developer based in Bhubaneshwar, Odisha, India.{" "}
+                            <p className="text-2xl leading-relaxed font-medium text-lightTxt dark:text-darkTxt font-[Mulish]">
+                                Hi, I'm Aayush Siwach. A passionate Web Developer based in Bhubaneshwar, Odisha, India.{" "}
                                 <a
-                                    href="
-                            https://maps.app.goo.gl/uAToS3VVq35UnpTc8"
+                                    href="https://maps.app.goo.gl/uAToS3VVq35UnpTc8"
+                                    className="inline-flex items-center text-lightA dark:text-darkA transition-colors"
                                 >
-                                    <img src={geo} alt="" />
+                                    <img src={geo} alt="Location" className="h-6 w-6 inline" />
                                 </a>
                             </p>
                             <span className="flex gap-5 my-10">
                                 <a
-                                    className="text-5xl text-[#2d2e32] hover:text-[#147efb]"
+                                    className="text-5xl"
                                     aria-label="linkedin"
                                     rel="noreferrer"
                                     target="_blank"
@@ -58,7 +58,7 @@ export default function Home() {
                                         strokeWidth={2}
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
-                                        className="tabler-icon tabler-icon-brand-linkedin"
+                                        className="tabler-icon tabler-icon-brand-linkedin stroke-lightA dark:stroke-darkA hover:stroke-lightP dark:hover:stroke-darkP"
                                     >
                                         <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
                                         <path d="M8 11l0 5" />
@@ -68,7 +68,7 @@ export default function Home() {
                                     </svg>
                                 </a>
                                 <a
-                                    className="text-5xl text-[#2d2e32] hover:text-[#147efb]"
+                                    className="text-5xl"
                                     aria-label="github"
                                     rel="noreferrer"
                                     target="_blank"
@@ -84,21 +84,19 @@ export default function Home() {
                                         strokeWidth={2}
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
-                                        className=""
+                                        className="stroke-lightA dark:stroke-darkA hover:stroke-lightP dark:hover:stroke-darkP"
                                     >
                                         <path
-                                            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 
-                -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 
-                -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                                            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
                                         ></path>
                                     </svg>
                                 </a>
                             </span>
                         </div>
-                        <div className="hero-img" />
+                        <div className="hero-img border border-3 border-lightA dark:border-darkA" />
                     </div>
-                    <div className="flex text-[1.7rem] text-[#767676] items-center absolute bottom-0 left-0">
-                        <p className="me-28 pe-8 border-r-2 text-[#2d2e32] border-[rgba(45, 46, 50, 0.5)] font-semibold font-[Mulish]">
+                    <div className="flex text-[1.7rem] text-lightP dark:text-darkP items-center">
+                        <p className="me-28 pe-8 border-r-2 text-darkS dark:text-lightS border-[rgba(45, 46, 50, 0.5)] dark:border-[rgba(255, 255, 255, 0.5)] font-semibold font-[Mulish]">
                             Tech Stack
                         </p>
                         <div className="logos">
