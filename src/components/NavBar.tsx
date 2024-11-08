@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { FaBeer } from "react-icons/fa";
 import light from "../assets/light.svg";
 import dark from "../assets/dark.svg";
-
+import { FiMoon, FiSun } from "react-icons/fi";
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,39 +10,50 @@ export default function NavBar() {
 
     // Check for dark mode preference on initial load
     useEffect(() => {
-      const darkModePreference = localStorage.getItem('darkMode');
-      if (darkModePreference === 'enabled') {
-          document.documentElement.classList.add('dark');
-          setIsDarkMode(true);
-      } else {
-          document.documentElement.classList.remove('dark');
-          setIsDarkMode(false);
-      }
-  }, []);
+        const darkModePreference = localStorage.getItem("darkMode");
+        if (darkModePreference === "enabled") {
+            document.documentElement.classList.add("dark");
+            setIsDarkMode(true);
+        } else {
+            document.documentElement.classList.remove("dark");
+            setIsDarkMode(false);
+        }
+    }, []);
 
-  const handleMenuToggle = () => {
-      setIsMenuOpen(!isMenuOpen);
-  };
+    useEffect(() => {
+        // Disable scrolling when menu is open
+        if (isMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        // Cleanup function to reset overflow on unmount
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [isMenuOpen]);
 
-  const toggleDarkMode = () => {
-      const newDarkMode = !isDarkMode;
-      setIsDarkMode(newDarkMode);
-      document.documentElement.classList.toggle("dark", newDarkMode);
-      localStorage.setItem('darkMode', newDarkMode ? 'enabled' : 'disabled');
-  };
+    const handleMenuToggle = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const toggleDarkMode = () => {
+        const newDarkMode = !isDarkMode;
+        setIsDarkMode(newDarkMode);
+        document.documentElement.classList.toggle("dark", newDarkMode);
+        localStorage.setItem("darkMode", newDarkMode ? "enabled" : "disabled");
+    };
 
     return (
         <>
-            <nav
-                className="w-full h-auto py-[25px] ps-[40px] pe-[50px] flex justify-between fixed bg-lightBg dark:bg-darkBg top-0 left-0 z-10 align-middle shadow-md dark:shadow-sm shadow-lightP dark:shadow-darkP text-[1.7rem]"
-            >
+            <nav className="w-screen h-16 px-4 flex justify-between items-center fixed bg-lightBg dark:bg-darkBg top-0 left-0 z-10 align-middle shadow-md dark:shadow-sm shadow-lightP dark:shadow-darkP">
                 <a
-                    className="text-lightTxt dark:text-darkTxt font-extrabold text-4xl"
+                    className="text-lightTxt dark:text-darkTxt font-extrabold text-xl"
                     href="#home"
                 >
                     <h3>Aayush.is-a.dev</h3>
                 </a>
-                <ul className="flex gap-8 dark:text-darkP">
+                <ul className="gap-8 dark:text-darkP text-xl hidden md:flex items-center">
                     <li>
                         <a
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
@@ -74,34 +86,35 @@ export default function NavBar() {
                             Contact
                         </a>
                     </li>
-                    <li>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={30}
-                            height={30}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="mobile-menu cursor-pointer"
-                            onClick={handleMenuToggle}
-                        >
-                            <path d="M4 6l16 0" />
-                            <path d="M4 12l16 0" />
-                            <path d="M4 18l16 0" />
-                        </svg>
-                    </li>
-                    <li>
-                        <button onClick={toggleDarkMode}>
-                            <img src={isDarkMode ? light : dark} alt="Toggle Dark Mode" className="h-8" />
-                        </button>
+                    <li
+                        onClick={toggleDarkMode}
+                        className="cursor-pointer text-lightA transition ease-in duration-300 hover:scale-125 hover:text-lightP"
+                    >
+                        {isDarkMode ? <FiSun /> : <FiMoon />}
                     </li>
                 </ul>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={30}
+                    height={30}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="stroke-lightA dark:stroke-darkA hover:stroke-lightP dark:hover:stroke-darkP md:hidden"
+                    onClick={handleMenuToggle}
+                >
+                    <path d="M4 6l16 0" />
+                    <path d="M4 12l16 0" />
+                    <path d="M4 18l16 0" />
+                </svg>
             </nav>
             <div
-                className={`mobile-nav ${isMenuOpen ? "open-menu" : "closed-menu"}`}
+                className={`mobile-nav backdrop-blur-lg ${
+                    isMenuOpen ? "open-menu" : "closed-menu"
+                }`}
                 onClick={handleMenuToggle}
             >
                 <span>
@@ -115,24 +128,50 @@ export default function NavBar() {
                         strokeWidth={2}
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="tabler-icon tabler-icon-x cursor-pointer"
+                        className="tabler-icon tabler-icon-x cursor-pointer stroke-lightA dark:stroke-darkA hover:stroke-lightP dark:hover:stroke-darkP"
                     >
                         <path d="M18 6l-12 12" />
                         <path d="M6 6l12 12" />
                     </svg>
                 </span>
                 <ul>
-                    <li>
-                        <a href="#home" className="text-lightTxt dark:text-darkTxt">Home</a>
+                <li
+                        onClick={toggleDarkMode}
+                        className="cursor-pointer text-lightA transition ease-in duration-300 hover:scale-125 hover:text-lightP"
+                    >
+                        {isDarkMode ? <FiSun /> : <FiMoon />}
                     </li>
                     <li>
-                        <a href="#about" className="text-lightTxt dark:text-darkTxt">About</a>
+                        <a
+                            href="#home"
+                            className="text-lightTxt dark:text-darkTxt"
+                        >
+                            Home
+                        </a>
                     </li>
                     <li>
-                        <a href="#projects" className="text-lightTxt dark:text-darkTxt">Projects</a>
+                        <a
+                            href="#about"
+                            className="text-lightTxt dark:text-darkTxt"
+                        >
+                            About
+                        </a>
                     </li>
                     <li>
-                        <a href="#contact" className="text-lightTxt dark:text-darkTxt">Contact</a>
+                        <a
+                            href="#projects"
+                            className="text-lightTxt dark:text-darkTxt"
+                        >
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            className="text-lightTxt dark:text-darkTxt"
+                        >
+                            Contact
+                        </a>
                     </li>
                 </ul>
             </div>

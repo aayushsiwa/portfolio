@@ -15,11 +15,15 @@ function App() {
     return (
         <>
             <NavBar />
-            <Home />
-            <About />
-            <Projects />
-            <Contact />
-            <Footer />
+            <div className="pt-16">
+                <section id="home">
+                    <Home />
+                </section>
+                <About />
+                <Projects />
+                <Contact />
+                {/* <Footer /> */}
+            </div>
         </>
     );
 }
