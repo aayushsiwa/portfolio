@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { FaBeer } from "react-icons/fa";
-import light from "../assets/light.svg";
-import dark from "../assets/dark.svg";
+// import { FaBeer } from "react-icons/fa";
+// import light from "../assets/light.svg";
+// import dark from "../assets/dark.svg";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 export default function NavBar() {
