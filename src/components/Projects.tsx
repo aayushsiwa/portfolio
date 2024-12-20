@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./uiComponents/ProjectCard";
-import projectData from "../../public/Projects.json"; // Import the JSON file
+import projectData from "../assets/projects.json"; // Import the JSON file
 
 export default function Projects() {
     type Project = {
