@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // import light from "../assets/light.svg";
 // import dark from "../assets/dark.svg";
 import { FiMoon, FiSun } from "react-icons/fi";
+import Switch from "./uiComponents/ThemeToggle";
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,18 +47,18 @@ export default function NavBar() {
 
     return (
         <>
-            <nav className="w-screen h-16 px-4 flex justify-between items-center fixed bg-lightBg dark:bg-darkBg top-0 left-0 z-10 align-middle shadow-md dark:shadow-sm shadow-lightP dark:shadow-darkP">
+            <nav className="w-screen h-16 px-4 flex justify-between items-center fixed bg-lightBg dark:bg-darkBg top-0 left-0 z-20 align-middle shadow-md dark:shadow-sm shadow-lightP dark:shadow-darkP">
                 <a
-                    className="text-lightTxt dark:text-darkTxt font-extrabold text-xl"
+                    className="text-lightP dark:text-darkTxt font-extrabold text-xl"
                     href="#home"
                 >
-                    <h3>Aayush.is-a.dev</h3>
+                    <h3>aayush.is-a.dev</h3>
                 </a>
                 <ul className="gap-8 dark:text-darkP text-xl hidden md:flex items-center">
                     <li>
                         <a
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="#home"
+                            href="/"
                         >
                             Home
                         </a>
@@ -65,7 +66,7 @@ export default function NavBar() {
                     <li>
                         <a
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="#about"
+                            href="about"
                         >
                             About
                         </a>
@@ -73,7 +74,7 @@ export default function NavBar() {
                     <li>
                         <a
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="#projects"
+                            href="projects"
                         >
                             Projects
                         </a>
@@ -81,16 +82,22 @@ export default function NavBar() {
                     <li>
                         <a
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="#contact"
+                            href="contact"
                         >
                             Contact
                         </a>
                     </li>
-                    <li
+                    {/* <li
                         onClick={toggleDarkMode}
                         className="cursor-pointer text-lightA transition ease-in duration-300 hover:scale-125 hover:text-lightP"
                     >
                         {isDarkMode ? <FiSun /> : <FiMoon />}
+                    </li> */}
+                    <li>
+                        <Switch
+                            onClick={toggleDarkMode}
+                            isDarkMode={isDarkMode}
+                        />
                     </li>
                 </ul>
                 <svg
@@ -135,7 +142,7 @@ export default function NavBar() {
                     </svg>
                 </span>
                 <ul>
-                <li
+                    <li
                         onClick={toggleDarkMode}
                         className="cursor-pointer text-lightA transition ease-in duration-300 hover:scale-125 hover:text-lightP"
                     >

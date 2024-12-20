@@ -16,17 +16,20 @@ export default {
                 // darkTxtS: 'wheat', // Dark text
                 darkTxt: "#e4ebe1", // Dark text
                 darkBg: "#070b05", // Dark background
+                darkBg2: "#121212",
                 darkP: "#b0dc99", // Dark paragraph
                 darkS: "#3e7f1c", // Dark heading
                 darkA: "#63e520", // Dark anchor
                 lightTxt: "#171f14", // Light text
                 lightBg: "#f6faf4", // Light background
+                lightBg2: "#f6ffff", // Light background
                 lightP: "#3b6723", // Light paragraph
                 lightS: "#a4e382", // Light heading
                 lightA: "#5ce01a", // Light anchor
             },
             animation: {
                 morph: "morph 8s ease-in-out infinite",
+                rotate: "rotate 20s linear infinite",
             },
             keyframes: {
                 morph: {
@@ -37,6 +40,10 @@ export default {
                     "100%": {
                         borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
                     },
+                },
+                rotate: {
+                    from: { transform: "rotate(0deg)" },
+                    to: { transform: "rotate(360deg)" },
                 },
             },
         },
