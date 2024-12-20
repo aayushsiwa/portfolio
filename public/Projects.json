@@ -1,0 +1,79 @@
+[
+    {
+        "title": "Jovian Careers Website",
+        "description": "A Job Offerings application for Jovian using Flask, with MySQL on Aiven. This app streamlines the job application process, making it easier for job seekers to find and apply for positions, and for companies to manage applications efficiently. By integrating email notifications and hCaptcha for security, it ensures a smooth and secure experience.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/jovian/master/api/static/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/jovian",
+        "liveLink": "https://jovian-alpha.vercel.app"
+    },
+    {
+        "title": "IOT Asset Tracking",
+        "description": "This project is a web application designed to monitor and manage IoT inventory. It provides real-time insights into the location and status of devices, streamlining asset management processes.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/iot-asset-tracking/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/iot-asset-tracking",
+        "liveLink": "https://iot-asset-tracking.vercel.app/"
+    },
+    {
+        "title": "RoboFleet Dashboard",
+        "description": "The RoboFleet Dashboard is a web-based interface designed to monitor and manage fleets of ROS-enabled service-mobile robots. It provides real-time insights into robot performance, status, and task execution, facilitating efficient fleet management.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/robofleet-dashboard/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/robofleet-dashboard",
+        "liveLink": "https://robofleet-dashboard.vercel.app/"
+    },
+    {
+        "title": "ROS Log Viewer",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/ros-log-viewer/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/ros-log-viewer",
+        "liveLink": "https://ros-log-viewer-as.vercel.app"
+    },
+    {
+        "title": "Next Voting Dashboard",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-voting/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/next-voting",
+        "liveLink": "https://next-voting.vercel.app/"
+    },
+    {
+        "title": "Dynamic Event Calendar",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/dynamic-event-calendar/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/dynamic-event-calendar",
+        "liveLink": "https://calendar-as.vercel.app/"
+    },
+    {
+        "title": "Next Dashboard",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/nextjs-dashboard/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/nextjs-dashboard",
+        "liveLink": "https://aayushsiwa-dashboard.vercel.app/"
+    },
+    {
+        "title": "Python Tutorials Website",
+        "description": "A Tutorials application for new learners using Django, with PostgresSQL on Render. This app provides users with basic tutorials to various fields in python programming.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/python-tutorials/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/python-tutorials",
+        "liveLink": "https://python-tutorials.vercel.app"
+    },
+    {
+        "title": "GenieTalks Chatbot",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/genietalks",
+        "liveLink": "https://genietalks.vercel.app"
+    },
+    {
+        "title": "To Do",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/to-do-list/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/to-do-list",
+        "liveLink": "https://to-do-list-hs.web.app/"
+    },
+    {
+        "title": "NEWS APP",
+        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/WEB-API/master/NewsAppv2/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/WEB-API",
+        "liveLink": "https://newsapp-as.vercel.app/"
+    }
+]
