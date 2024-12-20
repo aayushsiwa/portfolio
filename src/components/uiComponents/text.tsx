@@ -1,5 +1,3 @@
-import React from 'react';
-
 const RotatingText = () => {
   return (
     <div className="w-[19rem] h-[19rem] rounded-full flex items-center justify-center animate-spin">
