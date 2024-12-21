@@ -62,7 +62,7 @@ export default function About() {
                                 About
                             </h3>
                             <p className="text-[1.7rem] font-[Mulish] text-lightP dark:text-darkTxt font-medium leading-9">
-                                Final-year Computer Science student with a
+                                Senior at KIIT with a
                                 passion for development and a strong foundation
                                 in modern frameworks. Eager to bring my
                                 technical expertise, innovative mindset, and
