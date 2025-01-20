@@ -9,8 +9,8 @@ import Projects from "./Projects";
 export default function Home() {
     return (
         <>
-            <div className="flex flex-col items-center justify-center h-screen bg-lightBg dark:bg-darkBg relative">
-                <div className="md:flex sm:flex-col md:flex-row items-center justify-center md:max-w-[90vw] w-full h-96 pb-32">
+            <div className="flex flex-col items-center justify-center h-screen bg-lightBg dark:bg-darkBg relative pt-32">
+                <div className="md:flex sm:flex-col md:flex-row items-start justify-center w-[90vw] h-[80vh] my-auto 32">
                     <div>
                         <p className="text-6xl leading-relaxed text-lightP dark:text-darkP font-bold">
                             Hi, I'm Aayush!

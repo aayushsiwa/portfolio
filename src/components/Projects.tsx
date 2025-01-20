@@ -19,9 +19,9 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="bg-lightBg dark:bg-darkBg py-20 px-10 md:px-20 lg:px-40 gap-20 font-[Poppins]"
+            className="bg-lightBg dark:bg-darkBg py-40 px- md:px-0 lg:px-0 gap-0 font-[Poppins]"
         >
-            <div className="flex items-center justify-between gap-4 gap-y-8 w-full p-4 flex-wrap">
+            <div className="flex items-center justify-evenly gap-4 w-full p-4 flex-wrap max-w-[1000vw] mx-auto">
                 {projects.map((project, index) => (
                     <Card key={index} data={project} />
                 ))}

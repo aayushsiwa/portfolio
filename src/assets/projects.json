@@ -22,28 +22,28 @@
     },
     {
         "title": "ROS Log Viewer",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "The ROS Log Viewer is a web application that allows users to view and analyze ROS log files. It provides a user-friendly interface for filtering and searching logs, making it easier to diagnose issues and monitor system performance.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/ros-log-viewer/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/ros-log-viewer",
         "liveLink": "https://ros-log-viewer-as.vercel.app"
     },
     {
         "title": "Next Voting Dashboard",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "The Next Voting Dashboard is a web application that allows users to create and participate in polls. It provides real-time results and a user-friendly interface for managing polls and viewing statistics.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-voting/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/next-voting",
         "liveLink": "https://next-voting.vercel.app/"
     },
     {
         "title": "Dynamic Event Calendar",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "The Dynamic Event Calendar is a web application that allows users to create and manage events. It provides a user-friendly interface for scheduling events, sending invitations, and viewing event details.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/dynamic-event-calendar/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/dynamic-event-calendar",
         "liveLink": "https://calendar-as.vercel.app/"
     },
     {
         "title": "Next Dashboard",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "The Next Dashboard is a web application that provides a customizable interface for managing various tasks and data. It integrates with multiple APIs to provide real-time insights and analytics.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/nextjs-dashboard/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/nextjs-dashboard",
         "liveLink": "https://aayushsiwa-dashboard.vercel.app/"
@@ -57,21 +57,21 @@
     },
     {
         "title": "GenieTalks Chatbot",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "GenieTalks is a chatbot application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/genietalks",
         "liveLink": "https://genietalks.vercel.app"
     },
     {
         "title": "To Do",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "The To Do project is a task management application that helps users organize and prioritize their tasks. It provides a simple and intuitive interface for adding, editing, and completing tasks.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/to-do-list/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/to-do-list",
         "liveLink": "https://to-do-list-hs.web.app/"
     },
     {
         "title": "NEWS APP",
-        "description": "This project is a chat application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
+        "description": "The NEWS APP is a web application that aggregates news articles from various sources. It provides a user-friendly interface for browsing and reading news, with options to filter by category and source.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/WEB-API/master/NewsAppv2/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/WEB-API",
         "liveLink": "https://newsapp-as.vercel.app/"

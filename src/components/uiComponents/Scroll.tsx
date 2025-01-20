@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = () => {
   return (
     <StyledWrapper>
-      <div className="main__action pt-48">
+      <div className="main__action">
         <a className="main__scroll" href="#">
           <div className="main__scroll-box">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
