@@ -39,37 +39,32 @@ export default function About() {
             className="bg-lightBg2 dark:bg-darkBg2 h-screen flex flex-col"
             id="about"
         >
-            <div className="max-w-[107rem] mx-auto pb-10">
-                <div className="flex justify-center pt-24 h-[65rem] gap-40 relative">
-                    <div
-                        className="relative w-1/2 h-[35rem] rounded-3xl bg-cover bg-center"
-                        style={{ backgroundImage: `url(${workpic})` }}
-                    >
-                        <img
-                            src={emoji}
-                            alt="emoji"
-                            className="absolute z-10 w-24 -bottom-8 -right-8"
-                        />
-                        <img
-                            src={text}
-                            alt="text"
-                            className="absolute w-[19rem] animate-rotate hover:bg-lightS rounded-full -bottom-40 -right-32 bg-lightBg dark:bg-darkBg dark:hover:bg-darkS"
-                        />
-                    </div>
-                    <div className="w-1/2">
+            <div className="mx-auto pb-10 max-w-[90vw]">
+                <div className="flex justify-center pt-24 h-[65rem] gap-8 relative">
+                    <div className="relative w-1/2 max-h-[50vh]">
                         <div className="pb-4">
-                            <h3 className="text-[1.7rem] text-lightA dark:text-darkA font-bold mb-4 ">
+                            <h3 className="text-2xl text-lightA dark:text-darkA font-bold mb-4 ">
                                 About
                             </h3>
-                            <p className="text-[1.7rem] font-[Mulish] text-lightP dark:text-darkTxt font-medium leading-9">
-                                Senior at KIIT with a
-                                passion for development and a strong foundation
-                                in modern frameworks. Eager to bring my
-                                technical expertise, innovative mindset, and
+                            <p className="text-2xl font-[Mulish] text-lightP dark:text-darkTxt font-medium leading-9">
+                                Junior at{" "}
+                                <a
+                                    href="https://kiit.ac.in/"
+                                    target="_blank"
+                                    className="font-semibold"
+                                >
+                                    KIIT
+                                </a>{" "}
+                                with a passion for development and a strong
+                                foundation in modern frameworks. Eager to bring
+                                my technical expertise, innovative mindset, and
                                 adaptability to a dynamic software engineering
                                 role in a cutting-edge tech environment.
                             </p>
                         </div>
+                    </div>
+
+                    <div className="w-1/2">
                         <div>
                             <div className="text-lightP dark:text-darkP flex items-center sm:hidden md:flex mx-auto">
                                 <p className="pe-4 border-r-2 text-darkS dark:text-lightS border-lightA dark:border-darkA font-semibold font-[Mulish] text-3xl">
