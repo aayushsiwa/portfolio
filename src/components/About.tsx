@@ -1,6 +1,6 @@
-import emoji from "../assets/working-emoji.png";
-import workpic from "../assets/work.jpg";
-import text from "../assets/text.svg";
+// import emoji from "../assets/working-emoji.png";
+// import workpic from "../assets/work.jpg";
+// import text from "../assets/text.svg";
 
 const frontend = ["css", "tailwind", "bootstrap", "svelte", "react", "next"];
 
