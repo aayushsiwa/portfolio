@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import { FaBeer } from "react-icons/fa";
 // import light from "../assets/light.svg";
 // import dark from "../assets/dark.svg";
@@ -20,7 +21,12 @@ export default function NavBar() {
             setIsDarkMode(false);
         }
     }, []);
-
+    const toggleDarkMode = () => {
+        const newDarkMode = !isDarkMode;
+        setIsDarkMode(newDarkMode);
+        document.documentElement.classList.toggle("dark", newDarkMode);
+        localStorage.setItem("darkMode", newDarkMode ? "enabled" : "disabled");
+    };
     useEffect(() => {
         // Disable scrolling when menu is open
         if (isMenuOpen) {
@@ -38,54 +44,47 @@ export default function NavBar() {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const toggleDarkMode = () => {
-        const newDarkMode = !isDarkMode;
-        setIsDarkMode(newDarkMode);
-        document.documentElement.classList.toggle("dark", newDarkMode);
-        localStorage.setItem("darkMode", newDarkMode ? "enabled" : "disabled");
-    };
-
     return (
         <>
             <nav className="w-screen h-16 px-4 flex justify-between items-center fixed bg-lightBg dark:bg-darkBg top-0 left-0 z-20 align-middle shadow-md dark:shadow-sm shadow-lightP dark:shadow-darkP">
                 <a
                     className="text-lightP dark:text-darkTxt font-extrabold text-xl"
-                    href="#home"
+                    href="/"
                 >
                     <h3>aayush.is-a.dev</h3>
                 </a>
                 <ul className="gap-8 dark:text-darkP text-xl hidden md:flex items-center">
                     <li>
-                        <a
+                        <Link
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="/"
+                            to="/"
                         >
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
+                        <Link
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="about"
+                            to="/about"
                         >
                             About
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
+                        <Link
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="projects"
+                            to="projects"
                         >
                             Projects
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
+                        <Link
                             className="transition-all font-semibold hover:text-lightA dark:hover:text-darkA"
-                            href="contact"
+                            to="contact"
                         >
                             Contact
-                        </a>
+                        </Link>
                     </li>
                     {/* <li
                         onClick={toggleDarkMode}
@@ -149,36 +148,36 @@ export default function NavBar() {
                         {isDarkMode ? <FiSun /> : <FiMoon />}
                     </li>
                     <li>
-                        <a
-                            href="#home"
+                        <Link
+                            to="#home"
                             className="text-lightTxt dark:text-darkTxt"
                         >
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#about"
+                        <Link
+                            to="#about"
                             className="text-lightTxt dark:text-darkTxt"
                         >
                             About
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#projects"
+                        <Link
+                            to="#projects"
                             className="text-lightTxt dark:text-darkTxt"
                         >
                             Projects
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#contact"
+                        <Link
+                            to="#contact"
                             className="text-lightTxt dark:text-darkTxt"
                         >
                             Contact
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
