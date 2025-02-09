@@ -28,6 +28,13 @@
         "liveLink": "https://ros-log-viewer-as.vercel.app"
     },
     {
+        "title": "Map Visualization",
+        "description": "Creating interactive maps using Python and Streamlit. The project includes visualizations such as global company distributions, American Airlines flight paths, and state-city scatter and choropleth maps. The main application is structured to allow users to select different map types from a sidebar for display.",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/Map-Visualisation/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/Map-Visualisation",
+        "liveLink": "https://map-vis.streamlit.app"
+    },
+    {
         "title": "Next Voting Dashboard",
         "description": "The Next Voting Dashboard is a web application that allows users to create and participate in polls. It provides real-time results and a user-friendly interface for managing polls and viewing statistics.",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-voting/master/screenshot.png",
