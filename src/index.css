@@ -15,6 +15,10 @@ html {
     scroll-behavior: smooth;
 }
 
+html.dark{
+  background: #070b05;
+}
+
 body {
     /* background-color: white; */
     font-family: "Bricolage Grotesque", sans-serif;
