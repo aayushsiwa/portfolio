@@ -13,7 +13,7 @@ const Card = ({ data }) => {
             </div>
             <div className="p-2 grid h-1/2 transition-all duration-500 ease-in-out hover:h-full">
                 <h2 className="text-gray-800 dark:text-darkS text-center mb-1 font-black text-base">
-                    {data.title}
+                    {data.title.toUpperCase()}
                 </h2>
                 <p className="text-gray-800 overflow-hidden dark:text-darkP text-sm transition-all duration-500 ease-in-out hover:overflow-visible hover:max-h-full">
                     {data.description}
@@ -22,14 +22,14 @@ const Card = ({ data }) => {
                     <a
                         href={data.githubLink}
                         target="_blank"
-                        className="text-gray-800 dark:text-darkA font-semibold no-underline hover:underline bg-lightS rounded-xl px-4 transition-all duration-500 ease-in-out"
+                        className="text-gray-800 dark:text-darkS font-semibold no-underline hover:underline bg-lightS rounded-xl px-4 text-3xl transition-all duration-500 ease-in-out"
                     >
                         <FaCode />
                     </a>
                     <a
                         href={data.liveLink}
                         target="_blank"
-                        className="text-gray-800 dark:text-darkA font-semibold no-underline hover:underline bg-lightS rounded-xl px-4 transition-all duration-500 ease-in-out"
+                        className="text-gray-800 dark:text-darkS font-semibold no-underline hover:underline bg-lightS rounded-xl px-4 text-3xl transition-all duration-500 ease-in-out"
                     >
                         <MdOutput />
                     </a>
