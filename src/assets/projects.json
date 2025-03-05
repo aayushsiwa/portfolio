@@ -1,86 +1,93 @@
 [
-    {
-        "title": "Jovian Careers Website",
-        "description": "A Job Offerings application for Jovian using Flask, with MySQL on Aiven. This app streamlines the job application process, making it easier for job seekers to find and apply for positions, and for companies to manage applications efficiently. By integrating email notifications and hCaptcha for security, it ensures a smooth and secure experience.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/jovian/master/api/static/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/jovian",
-        "liveLink": "https://jovian-alpha.vercel.app"
-    },
-    {
-        "title": "IOT Asset Tracking",
-        "description": "This project is a web application designed to monitor and manage IoT inventory. It provides real-time insights into the location and status of devices, streamlining asset management processes.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/iot-asset-tracking/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/iot-asset-tracking",
-        "liveLink": "https://iot-asset-tracking.vercel.app/"
-    },
-    {
-        "title": "RoboFleet Dashboard",
-        "description": "The RoboFleet Dashboard is a web-based interface designed to monitor and manage fleets of ROS-enabled service-mobile robots. It provides real-time insights into robot performance, status, and task execution, facilitating efficient fleet management.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/robofleet-dashboard/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/robofleet-dashboard",
-        "liveLink": "https://robofleet-dashboard.vercel.app/"
-    },
-    {
-        "title": "ROS Log Viewer",
-        "description": "The ROS Log Viewer is a web application that allows users to view and analyze ROS log files. It provides a user-friendly interface for filtering and searching logs, making it easier to diagnose issues and monitor system performance.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/ros-log-viewer/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/ros-log-viewer",
-        "liveLink": "https://ros-log-viewer-as.vercel.app"
-    },
-    {
-        "title": "Map Visualization",
-        "description": "Creating interactive maps using Python and Streamlit. The project includes visualizations such as global company distributions, American Airlines flight paths, and state-city scatter and choropleth maps. The main application is structured to allow users to select different map types from a sidebar for display.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/Map-Visualisation/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/Map-Visualisation",
-        "liveLink": "https://map-vis.streamlit.app"
-    },
-    {
-        "title": "Next Voting Dashboard",
-        "description": "The Next Voting Dashboard is a web application that allows users to create and participate in polls. It provides real-time results and a user-friendly interface for managing polls and viewing statistics.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-voting/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/next-voting",
-        "liveLink": "https://next-voting.vercel.app/"
-    },
-    {
-        "title": "Dynamic Event Calendar",
-        "description": "The Dynamic Event Calendar is a web application that allows users to create and manage events. It provides a user-friendly interface for scheduling events, sending invitations, and viewing event details.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/dynamic-event-calendar/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/dynamic-event-calendar",
-        "liveLink": "https://calendar-as.vercel.app/"
-    },
-    {
-        "title": "Next Dashboard",
-        "description": "The Next Dashboard is a web application that provides a customizable interface for managing various tasks and data. It integrates with multiple APIs to provide real-time insights and analytics.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/nextjs-dashboard/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/nextjs-dashboard",
-        "liveLink": "https://aayushsiwa-dashboard.vercel.app/"
-    },
-    {
-        "title": "Python Tutorials Website",
-        "description": "A Tutorials application for new learners using Django, with PostgresSQL on Render. This app provides users with basic tutorials to various fields in python programming.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/python-tutorials/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/python-tutorials",
-        "liveLink": "https://python-tutorials.vercel.app"
-    },
-    {
-        "title": "GenieTalks Chatbot",
-        "description": "GenieTalks is a chatbot application that integrates with Google's Generative AI model for intelligent responses. Users can ask questions, receive responses, and view their chat history. The project demonstrates how to use Vite for the frontend and Express.js for the backend, leveraging Google's Generative AI for conversational capabilities.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/genietalks",
-        "liveLink": "https://genietalks.vercel.app"
-    },
-    {
-        "title": "To Do",
-        "description": "The To Do project is a task management application that helps users organize and prioritize their tasks. It provides a simple and intuitive interface for adding, editing, and completing tasks.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/to-do-list/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/to-do-list",
-        "liveLink": "https://to-do-list-hs.web.app/"
-    },
-    {
-        "title": "NEWS APP",
-        "description": "The NEWS APP is a web application that aggregates news articles from various sources. It provides a user-friendly interface for browsing and reading news, with options to filter by category and source.",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/WEB-API/master/NewsAppv2/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/WEB-API",
-        "liveLink": "https://newsapp-as.vercel.app/"
-    }
+  {
+      "title": "NextJs-Dashboard",
+      "description": "NextJs-Dashboard is a project-based repository showcasing a modern, responsive dashboard built using Next.js, TypeScript, CSS, and JavaScript. It demonstrates best practices for front-end development with Next.js, including data fetching, component architecture, and styling solutions, serving as a practical example for learning and implementing similar dashboard applications.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/NextJs-Dashboard/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/NextJs-Dashboard",
+      "liveLink": "https://aayushsiwa-dashboard.vercel.app"
+  },
+  {
+      "title": "next-voting",
+      "description": "Next-voting is a project exploring decentralized voting solutions built with TypeScript, CSS, and JavaScript. It aims to provide a secure and transparent platform for various voting scenarios, leveraging modern web technologies to create a user-friendly and accessible voting experience. The repository contains the source code and related resources for this voting platform.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-voting/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/next-voting",
+      "liveLink": "https://next-voting.vercel.app"
+  },
+  {
+      "title": "resume",
+      "description": "This repository contains the TeX source code for my resume. It's a personal project demonstrating my typesetting skills and provides a customizable template for creating professional-looking resumes using LaTeX. The primary topics covered are document creation and formatting using the TeX language.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/resume/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/resume",
+      "liveLink": ""
+  },
+  {
+      "title": "finance-with-python",
+      "description": "This repository, built using Jupyter Notebook and Python, contains projects focused on practical financial analysis and modeling. It explores key concepts in finance through hands-on exercises and code examples, providing a resource for learning and applying Python to real-world financial problems.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/finance-with-python/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/finance-with-python",
+      "liveLink": "https://py-finance.streamlit.app/"
+  },
+  {
+      "title": "genietalks",
+      "description": "GenieTalks is a project built with TypeScript, Vite.js, Express.js, CSS, HTML, and JavaScript, exploring integration with the Gemini API to create a platform for interactive and intelligent conversations. This repository showcases a practical application of modern web technologies combined with AI capabilities for building a dynamic and engaging project.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/genietalks",
+      "liveLink": "https://genietalks.vercel.app"
+  },
+  {
+      "title": "robofleet-dashboard",
+      "description": "Robofleet-dashboard is a web-based interface developed using JavaScript, Python, HTML, and CSS, designed to visualize and interact with data from the Robofleet robotics platform. This project provides real-time monitoring, data analysis, and control capabilities for robotic fleets, offering a comprehensive solution for managing and understanding robot performance and operations. It serves as a central hub for Robofleet users to gain insights and manage their robotics deployments.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/robofleet-dashboard/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/robofleet-dashboard",
+      "liveLink": "https://robofleet-dashboard.vercel.app"
+  },
+  {
+      "title": "atg-world",
+      "description": "The atg-world repository houses a project built using TypeScript, JavaScript, HTML, and CSS. This project, focusing on [mention specific aim of project if known, otherwise use a general term like \"web development\" or \"frontend development\"], explores [mention specific aspect of the topic 'project', e.g., \"interactive maps,\" \"data visualization,\" \"user interfaces\"].\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/atg-world/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/atg-world",
+      "liveLink": "https://atg-world-as.vercel.app"
+  },
+  {
+      "title": "iot-asset-tracking",
+      "description": "iot-asset-tracking is a web application built with Next.js, TypeScript, TailwindCSS, and Supabase, designed for real-time tracking and management of IoT assets. This project provides a user-friendly interface for monitoring device locations and status, leveraging Supabase for data storage and authentication, and utilizing TypeScript for maintainable and scalable code.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/iot-asset-tracking/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/iot-asset-tracking",
+      "liveLink": "https://iot-asset-tracking.vercel.app"
+  },
+  {
+      "title": "ros-log-viewer",
+      "description": "`ros-log-viewer` is a web-based tool for visualizing and analyzing ROS (Robot Operating System) log files. Built using JavaScript, Python, HTML, CSS, and Shell scripts, it provides a user-friendly interface to parse, filter, and interpret ROS log data, aiding in debugging and understanding robot behavior. This project focuses on providing efficient log analysis and falls under the broad topic of project development.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/ros-log-viewer/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/ros-log-viewer",
+      "liveLink": "https://ros-log-viewer-as.vercel.app"
+  },
+  {
+      "title": "dynamic-event-calendar",
+      "description": "Dynamic-Event-Calendar is a JavaScript, CSS, and HTML project designed to create a visually appealing and interactive calendar that can dynamically display and manage events. This project focuses on providing a user-friendly interface for scheduling and viewing events, making it a valuable tool for personal organization or integrating into larger web applications requiring event management functionality.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/dynamic-event-calendar/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/dynamic-event-calendar",
+      "liveLink": "https://calendar-as.vercel.app"
+  },
+  {
+      "title": "Map-Visualisation",
+      "description": "Map-Visualisation is a project leveraging HTML and Python to create interactive map visualizations. This repository contains the code and resources for generating dynamic and informative maps, suitable for exploring geographical data and showcasing spatial relationships. The project focuses on practical application of map visualization techniques.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/Map-Visualisation/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/Map-Visualisation",
+      "liveLink": "https://map-vis.streamlit.app/"
+  },
+  {
+      "title": "next-idea-board",
+      "description": "Next-Idea-Board is a project management tool built using TypeScript, CSS, and JavaScript. This repository provides a flexible and collaborative platform for brainstorming, organizing, and prioritizing ideas, helping teams visualize and track their progress from initial concept to actionable tasks.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-idea-board/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/next-idea-board",
+      "liveLink": "https://next-idea-board.vercel.app"
+  },
+  {
+      "title": "jovian",
+      "description": "The jovian repository hosts a CRUD application built with Python and the Flask framework, utilizing PostgreSQL for data storage. This project demonstrates the implementation of basic create, read, update, and delete operations, showcasing web development principles with technologies including HTML, CSS, and Shell scripts for deployment and management. It serves as a practical example of a Python-based web application using Flask and PostgreSQL.\n",
+      "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/jovian/master/screenshot.png",
+      "githubLink": "https://github.com/aayushsiwa/jovian",
+      "liveLink": "https://jovian-alpha.vercel.app"
+  }
 ]
