@@ -3,7 +3,7 @@ name: Generate Repo Descriptions
 on:
   push:
     branches:
-      - '*'  # Trigger on push to any branch of any repository
+      - '*'
 
 jobs:
   generate_descriptions:
@@ -24,7 +24,7 @@ jobs:
       - name: Generate descriptions
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} #Change from default token to personal token.
         run: |
           python main.py --api_key $GEMINI_API_KEY --github_owner ${{ github.repository_owner }} --github_token $GITHUB_TOKEN
 
