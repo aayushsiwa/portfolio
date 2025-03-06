@@ -2,35 +2,34 @@ import google.generativeai as genai
 import json
 import requests
 import os
+import argparse
 
-def generate_repo_descriptions(api_url, output_file="projects.json"):
+def generate_repo_descriptions(api_url, api_key, github_token, output_file="projects.json"):
     """Generates descriptions for all repositories from a GitHub API search and writes to a JSON file."""
 
-    # Retrieve the API key from the environment variable
-    api_key = os.environ.get("GEMINI_API_KEY")
-
-    # Check if the API key is available
-    if not api_key:
-        print("Error: GEMINI_API_KEY not found in environment variables.")
-        return
-
+    # Configure Gemini AI with the provided API key
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel('gemini-2.0-flash')
 
+    headers = {"Authorization": f"token {github_token}"} if github_token else {}
+
     try:
-        response = requests.get(api_url)
+        response = requests.get(api_url, headers=headers)
         response.raise_for_status()
         repo_data = response.json()
-        repos = repo_data["items"]
+        repos = repo_data.get("items", [])
 
         descriptions = []
         for repo in repos:
             repo_name = repo["name"]
             repo_url = repo["html_url"]
             languages_url = repo["languages_url"]
-            languages_response = requests.get(languages_url)
+
+            # Fetch repository languages with authentication
+            languages_response = requests.get(languages_url, headers=headers)
             languages_response.raise_for_status()
             languages = list(languages_response.json().keys())
+
             language_string = ", ".join(languages)
             topics = repo.get("topics", [])
             topic_string = ", ".join(topics)
@@ -69,5 +68,12 @@ def generate_repo_descriptions(api_url, output_file="projects.json"):
         print("API response could not be parsed as JSON")
 
 if __name__ == "__main__":
-    api_url = f"https://api.github.com/search/repositories?q=user:${os.environ.get('GITHUB_REPOSITORY_OWNER')}+topic:project"
-    generate_repo_descriptions(api_url)
+    parser = argparse.ArgumentParser(description="Generate GitHub repository descriptions using Gemini AI.")
+    parser.add_argument("--api_key", required=True, help="Gemini API key for generating descriptions.")
+    parser.add_argument("--github_owner", required=True, help="GitHub username or organization to fetch repositories.")
+    parser.add_argument("--github_token", required=True, help="GitHub Personal Access Token to avoid rate limits.")
+
+    args = parser.parse_args()
+    
+    api_url = f"https://api.github.com/search/repositories?q=user:{args.github_owner}+topic:project"
+    generate_repo_descriptions(api_url, args.api_key, args.github_token)
