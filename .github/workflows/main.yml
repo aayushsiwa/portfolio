@@ -22,8 +22,11 @@ jobs:
         run: pip install requests google-generativeai
 
       - name: Generate descriptions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_TOKEN }}
         run: |
-          python main.py --api_key $GEMINI_API_KEY --github_owner aayushsiwa --github_token $TOKEN_TOKEN
+          python main.py --api_key $GEMINI_API_KEY --github_owner ${{ github.repository_owner }} --github_token $TOKEN_TOKEN
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
