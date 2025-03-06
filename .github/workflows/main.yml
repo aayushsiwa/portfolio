@@ -23,7 +23,7 @@ jobs:
 
       - name: Generate descriptions
         run: |
-          python script.py --api_key $GEMINI_API_KEY --github_owner aayushsiwa --github_token $TOKEN_TOKEN
+          python main.py --api_key $GEMINI_API_KEY --github_owner aayushsiwa --github_token $TOKEN_TOKEN
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
