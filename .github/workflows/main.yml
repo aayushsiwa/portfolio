@@ -24,12 +24,15 @@ jobs:
       - name: Generate descriptions
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} #Change from default token to personal token.
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           python main.py --api_key $GEMINI_API_KEY --github_owner ${{ github.repository_owner }} --github_token $GITHUB_TOKEN
 
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: GitHub Commit & Push
+        uses: actions-js/push@v1.5
         with:
-          commit_message: "Update repo descriptions"
-          file_pattern: projects.json
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          message: "Update repo descriptions"
+          branch: master # Or your default branch
+          directory: . # Current directory
+          force: true # use force to avoid issues.
