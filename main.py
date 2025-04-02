@@ -4,7 +4,7 @@ import requests
 import os
 import argparse
 
-def generate_repo_descriptions(api_url, api_key, github_token, output_file="projects.json"):
+def generate_repo_descriptions(api_url, api_key, github_token, output_file="./src/assets/projects.json"):
     """Generates descriptions for all repositories from a GitHub API search and writes to a JSON file."""
 
     # Configure Gemini AI with the provided API key
