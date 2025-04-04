@@ -1,0 +1,38 @@
+name: Generate Repo Descriptions
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  generate_descriptions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests google-generativeai
+
+      - name: Generate descriptions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          python main.py --api_key $GEMINI_API_KEY --github_owner ${{ github.repository_owner }} --github_token $GITHUB_TOKEN
+
+      - name: GitHub Commit & Push
+        uses: actions-js/push@v1.5
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          message: "Update repo descriptions"
+          branch: master # Or your default branch
+          directory: . # Current directory
+          force: true # use force to avoid issues.

@@ -39,7 +39,7 @@ export default function Contact() {
                         <div className="flex items-center gap-6">
                             <a
                                 href="mailto:aayush@mail.aayushsiwa.is-a.dev"
-                                className="flex bg-white dark:bg-darkBg w-20 items-center justify-center h-20 shadow-md dark:shadow-darkS rounded-full text-[#147efb]"
+                                className="flex bg-white dark:bg-darkBg w-20 items-center justify-center h-20 shadow-md dark:shadow-darkS rounded-full text-[#147efb] hover:scale-110 transition-transform"
                             >
                                 <CiMail size={48} color="#5ce01a" />
                             </a>
