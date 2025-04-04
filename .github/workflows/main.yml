@@ -1,9 +1,8 @@
 name: Generate Repo Descriptions
 
 on:
-  push:
-    branches:
-      - '*'
+  schedule:
+    - cron: '0 10 * * 0'  # Every Sunday at 10:00 AM UTC
 
 jobs:
   generate_descriptions:
@@ -33,6 +32,6 @@ jobs:
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           message: "Update repo descriptions"
-          branch: master # Or your default branch
-          directory: . # Current directory
-          force: true # use force to avoid issues.
+          branch: master
+          directory: .
+          force: true
