@@ -4,6 +4,7 @@ import datetime
 import git
 import shutil
 from dotenv import load_dotenv
+import traceback
 
 load_dotenv()
 
@@ -28,12 +29,17 @@ def log_cron(message: str):
 
 
 def get_repo():
+    print(f"Checking if REPO_DIR exists: {REPO_DIR}")
     if os.path.exists(REPO_DIR):
+        print("Repo exists. Pulling...")
         repo = git.Repo(REPO_DIR)
         repo.remote().pull()
+        print("Repo pulled successfully.")
     else:
+        print("Cloning repo...")
         repo = git.Repo.clone_from(CLONE_URL, REPO_DIR)
     return repo
+
 
 
 def update_log_and_push():
@@ -54,7 +60,8 @@ def update_log_and_push():
 
         log_cron("✅ Log updated and pushed successfully.")
     except Exception as e:
-        log_cron(f"❌ Error: {str(e)}")
+        log_cron(f"❌ Exception: {traceback.format_exc()}")
+
 
 
 def read_log_file():

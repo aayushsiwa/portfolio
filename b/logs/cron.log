@@ -2,3 +2,35 @@
 [2025-04-05T03:12:23.183035] ✅ Log updated and pushed successfully.
 [2025-04-05T03:16:28.832227] 🚀 Starting log update...
 [2025-04-05T03:16:31.901395] ✅ Log updated and pushed successfully.
+[2025-04-06T01:18:15.384821] 🚀 Starting log update...
+[2025-04-06T01:18:15.386047] ❌ Error: D:\1OnGitHub\portfolio\b\temp\portfolio
+[2025-04-06T01:21:51.236524] 🚀 Starting log update...
+[2025-04-06T01:21:51.237539] ❌ Error: D:\1OnGitHub\portfolio\b\temp\portfolio
+[2025-04-06T01:23:59.365792] 🚀 Starting log update...
+[2025-04-06T01:23:59.366905] ❌ Error: D:\1OnGitHub\portfolio\b\temp\portfolio
+[2025-04-06T01:24:48.174298] 🚀 Starting log update...
+[2025-04-06T01:24:48.175746] ❌ Error: D:\1OnGitHub\portfolio\b\temp\portfolio
+[2025-04-06T01:26:10.809331] 🚀 Starting log update...
+[2025-04-06T01:26:10.812343] ❌ Exception: Traceback (most recent call last):
+  File "D:\1OnGitHub\portfolio\b\app\scheduler.py", line 47, in update_log_and_push
+    repo = get_repo()
+           ^^^^^^^^^^
+  File "D:\1OnGitHub\portfolio\b\app\scheduler.py", line 35, in get_repo
+    repo = git.Repo(REPO_DIR)
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\git\repo\base.py", line 276, in __init__
+    raise InvalidGitRepositoryError(epath)
+git.exc.InvalidGitRepositoryError: D:\1OnGitHub\portfolio\b\temp\portfolio
+
+[2025-04-06T01:26:40.441844] 🚀 Starting log update...
+[2025-04-06T01:26:40.444846] ❌ Exception: Traceback (most recent call last):
+  File "D:\1OnGitHub\portfolio\b\app\scheduler.py", line 47, in update_log_and_push
+    log_cron("🚀 Starting log update...")
+           ^^^^^^^
+  File "D:\1OnGitHub\portfolio\b\app\scheduler.py", line 35, in get_repo
+    repo = git.Repo(REPO_DIR)
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\git\repo\base.py", line 276, in __init__
+    raise InvalidGitRepositoryError(epath)
+git.exc.InvalidGitRepositoryError: D:\1OnGitHub\portfolio\b\temp\portfolio
+
