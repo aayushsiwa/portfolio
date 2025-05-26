@@ -3,6 +3,8 @@ import json
 import requests
 import os
 import argparse
+import time
+from random import uniform
 
 def generate_repo_descriptions(api_url, api_key, github_token, output_file="./src/assets/projects.json"):
     """Generates descriptions for all repositories from a GitHub API search and writes to a JSON file."""
@@ -56,6 +58,7 @@ def generate_repo_descriptions(api_url, api_key, github_token, output_file="./sr
                 "githubLink": repo_url,
                 "liveLink": homepage
             })
+            time.sleep(uniform(4, 6))
 
         with open(output_file, "w") as f:
             json.dump(descriptions, f, indent=4)
