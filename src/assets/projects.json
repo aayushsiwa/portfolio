@@ -42,13 +42,6 @@
         "liveLink": "https://aayushsiwa.github.io/resume/resume.pdf"
     },
     {
-        "title": "22052177",
-        "description": "Project 22052177 is a web-based application built using TypeScript, JavaScript, CSS, and HTML. This repository serves as a project focused on [mention the specific project's aim if known, otherwise add a generic purpose like \"exploring web development techniques\" or \"demonstrating front-end development skills\"]. It leverages these technologies to create a [mention the type of application, e.g., \"dynamic user interface\" or \"interactive webpage\"].\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/22052177/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/22052177",
-        "liveLink": ""
-    },
-    {
         "title": "robofleet-dashboard",
         "description": "The robofleet-dashboard repository provides a web-based interface for visualizing and interacting with data from a Robofleet robotics system. Built using JavaScript, Python, HTML, and CSS, it offers tools for monitoring robot status, displaying sensor information, and controlling robot behavior, ultimately serving as a central project for managing and understanding Robofleet deployments.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/robofleet-dashboard/master/screenshot.png",
