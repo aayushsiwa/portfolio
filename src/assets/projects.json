@@ -1,126 +1,126 @@
 [
     {
         "title": "sleep-debt-tracker",
-        "description": "Sleep-debt-tracker is a project built with TypeScript, JavaScript, CSS, and HTML that allows users to monitor and manage their sleep debt. This tool helps individuals visualize their sleep patterns and identify potential areas for improvement, ultimately promoting better sleep hygiene. It is a practical application showcasing TypeScript implementation for building interactive web applications.\n",
+        "description": "The sleep-debt-tracker project is a web application built with TypeScript, JavaScript, CSS, and HTML that helps users visualize and manage their accumulated sleep debt. This project serves as a practical demonstration of utilizing TypeScript in a front-end development environment and explores concepts related to time management and data visualization.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/sleep-debt-tracker/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/sleep-debt-tracker",
         "liveLink": "https://napTrack.vercel.app"
     },
     {
         "title": "next-voting",
-        "description": "Next-voting is a project built using TypeScript, CSS, and JavaScript that provides a platform for creating and participating in various types of online voting events. This repository houses the codebase for a versatile voting system, encompassing features such as user authentication, vote casting, real-time results, and administration tools. It serves as a central hub for development and collaboration related to this voting application.\n",
+        "description": "Next-voting is a project built with TypeScript, CSS, and JavaScript, designed to implement a secure and user-friendly voting application. This repository contains the source code for the entire project, focusing on providing a robust and modern solution for online voting systems. The project aims to explore best practices in web development while delivering a practical tool for managing and conducting votes.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-voting/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/next-voting",
         "liveLink": "https://next-voting.vercel.app"
     },
     {
-        "title": "resume",
-        "description": "This repository contains the source code for my resume, built using a combination of TeX for generating the PDF and HTML for web-based viewing. The project explores different ways to present professional experience and skills in a clear and effective manner, serving as a personal project for showcasing my qualifications.\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/resume/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/resume",
-        "liveLink": "https://aayushsiwa.github.io/resume/resume.pdf"
-    },
-    {
         "title": "robofleet-dashboard",
-        "description": "The robofleet-dashboard repository provides a web-based interface, built with JavaScript, Python, HTML, and CSS, for visualizing and interacting with data from Robofleet robotics platforms. This project aims to provide a user-friendly dashboard for monitoring robot status, sensor data, and mission progress, serving as a valuable tool for robotics developers and operators working within the Robofleet ecosystem.\n",
+        "description": "The robofleet-dashboard repository provides a web-based interface, built with JavaScript, Python, HTML, and CSS, for monitoring and controlling robotic fleets. This project offers a comprehensive dashboard solution for visualizing robot status, managing tasks, and gaining insights into fleet operations, fitting under the broad topic of project-based software development.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/robofleet-dashboard/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/robofleet-dashboard",
         "liveLink": "https://robofleet-dashboard.vercel.app"
     },
     {
         "title": "Map-Visualisation",
-        "description": "Map-Visualisation is a project exploring the creation and display of interactive maps using HTML and Python. It aims to visualize geographical data and present it in a user-friendly and informative way. This repository encompasses code and resources related to map generation, data integration, and interactive elements within a web-based mapping environment.\n",
+        "description": "Map-Visualisation is a project utilizing HTML and Python to create interactive and informative map visualizations. This repository focuses on demonstrating how to leverage geographic data and present it in a visually appealing and understandable format, exploring the intersection of data science and web development.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/Map-Visualisation/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/Map-Visualisation",
         "liveLink": "https://map-vis.streamlit.app/"
     },
     {
         "title": "jovian",
-        "description": "Jovian is a Python-based CRUD application built with Flask, designed to interact with a PostgreSQL database. This project utilizes HTML, CSS, and Shell scripting alongside Python for its functionality and deployment, serving as a practical example for learning and implementing web applications and database interactions. It explores topics such as CRUD operations, web development with Flask, database management with PostgreSQL, and general project structure.\n",
+        "description": "Jovian is a Python-based CRUD application built with Flask, PostgreSQL, HTML, and CSS. This project demonstrates the creation of a full-stack web application, showcasing the integration of backend logic with a user interface for performing Create, Read, Update, and Delete operations on data stored in a PostgreSQL database, making it a practical example for learning web development with Python.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/jovian/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/jovian",
         "liveLink": "https://jovian-alpha.vercel.app"
     },
     {
-        "title": "22052177",
-        "description": "This project, built with TypeScript, JavaScript, CSS, and HTML, explores and implements a range of modern web development techniques. Focused on a specific project within the larger realm of project management, this repository provides a practical example of how these technologies can be integrated to create a functional and responsive web application.\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/22052177/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/22052177",
-        "liveLink": ""
-    },
-    {
-        "title": "atg-world",
-        "description": "The atg-world repository is a project built using TypeScript, JavaScript, HTML, and CSS. It encompasses development related to the defined project scope, leveraging modern web technologies to achieve its goals. This repository serves as the central location for source code, documentation, and related resources for the atg-world project.\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/atg-world/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/atg-world",
-        "liveLink": "https://atg-world-as.vercel.app"
-    },
-    {
         "title": "next-idea-board",
-        "description": "Next-idea-board is a project utilizing TypeScript, CSS, and JavaScript to create a dynamic and collaborative idea-boarding application. This repository focuses on providing a platform for brainstorming, organizing, and developing project ideas in a structured and visually appealing manner.\n",
+        "description": "Next-idea-board is a project built using TypeScript, CSS, and JavaScript that provides a visual platform for organizing and brainstorming project ideas. This repository serves as a digital whiteboard to capture, categorize, and prioritize concepts, fostering collaboration and efficient project planning. It's designed to be a flexible and user-friendly tool for individuals and teams to manage their creative workflows.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/next-idea-board/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/next-idea-board",
         "liveLink": "https://next-idea-board.vercel.app"
     },
     {
-        "title": "ros-log-viewer",
-        "description": "ros-log-viewer is a web-based tool built with JavaScript, Python, HTML, CSS, and Shell scripting for visualizing and analyzing ROS (Robot Operating System) log files. This project aims to provide a user-friendly interface for filtering, searching, and interpreting ROS logs, facilitating efficient debugging and troubleshooting in robotics projects. It falls under the \"project\" category, serving as a practical application for ROS developers.\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/ros-log-viewer/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/ros-log-viewer",
-        "liveLink": "https://ros-log-viewer-as.vercel.app"
-    },
-    {
         "title": "NextJs-Dashboard",
-        "description": "NextJs-Dashboard is a project built with TypeScript, CSS, and JavaScript, designed to demonstrate a modern web dashboard implementation using the Next.js framework. It showcases best practices for structuring Next.js applications and provides a foundation for building scalable and interactive user interfaces for data visualization and management. This repository serves as a practical example and learning resource for web developers looking to create robust dashboards with Next.js.\n",
+        "description": "NextJs-Dashboard is a project showcasing a modern dashboard implementation using Next.js, TypeScript, CSS, and JavaScript. It serves as a practical example for building robust and visually appealing web applications, demonstrating best practices for front-end architecture, component design, and data handling within a Next.js environment. This repository provides a solid foundation for learning and building your own custom dashboards and data-driven applications.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/NextJs-Dashboard/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/NextJs-Dashboard",
         "liveLink": "https://aayushsiwa-dashboard.vercel.app"
     },
     {
         "title": "raven-v2",
-        "description": "Raven-v2 is a project repository primarily built using TypeScript and JavaScript. It serves as a hub for the development and management of [briefly state the project's purpose/function, e.g., \"a modern web application,\" \"a data processing pipeline,\" or \"a collection of utility scripts\"]. This repository encompasses all aspects related to the project's lifecycle, from initial development to ongoing maintenance and future enhancements.\n",
+        "description": "Raven v2 is a project utilizing TypeScript and JavaScript to [insert project's primary function/goal, e.g., build a modern web application, develop a reusable UI component library, etc.]. This repository encompasses the core codebase and related resources for [further elaborate on the project, e.g., managing data, rendering user interfaces, or implementing specific features]. Focused on [mention specific area of focus or methodology, e.g., performance, maintainability, or test-driven development], Raven v2 aims to provide a [describe intended outcome or deliverable, e.g., robust, efficient, and scalable solution, comprehensive set of tools, etc.].\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/raven-v2/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/raven-v2",
         "liveLink": ""
     },
     {
+        "title": "ros-log-viewer",
+        "description": "ros-log-viewer is a web-based tool for visualizing and analyzing ROS (Robot Operating System) log files. Built with JavaScript, Python, HTML, CSS, and shell scripts, it provides an intuitive interface for filtering, searching, and understanding ROS log data to aid in debugging and performance analysis. This project falls under the broader topic of ROS development and tooling.\n",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/ros-log-viewer/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/ros-log-viewer",
+        "liveLink": "https://ros-log-viewer-as.vercel.app"
+    },
+    {
+        "title": "22052177",
+        "description": "This project, built with TypeScript, JavaScript, CSS, and HTML, explores various aspects related to its core topic. It serves as a demonstration and experimentation ground, offering a practical implementation leveraging modern web development technologies to address key challenges and concepts within the defined project scope.\n",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/22052177/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/22052177",
+        "liveLink": ""
+    },
+    {
+        "title": "resume",
+        "description": "This repository houses the source code for my resume, generated using LaTeX for professional formatting and styling. The resume can also be rendered as HTML for online viewing and accessibility. This project serves as a showcase of my skills and experience, and is categorized under the \"project\" topic for easy reference.\n",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/resume/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/resume",
+        "liveLink": "https://aayushsiwa.github.io/resume/resume.pdf"
+    },
+    {
+        "title": "genietalks",
+        "description": "GenieTalks is a project leveraging TypeScript, CSS, JavaScript, and HTML to build an Express.js application that interfaces with the Gemini API. Built with Vite.js, this repository showcases a practical implementation for interacting with the Gemini API, providing a foundation for AI-powered conversational interfaces and other creative applications.\n",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/genietalks",
+        "liveLink": "https://genietalks.vercel.app"
+    },
+    {
         "title": "dynamic-event-calendar",
-        "description": "dynamic-event-calendar is a project built using JavaScript, CSS, and HTML to create a dynamic and interactive event calendar. This repository provides a foundation for displaying, managing, and interacting with event data, offering a flexible and customizable solution for integrating event scheduling into web applications. The project focuses on providing a user-friendly interface and dynamic functionality for a seamless event calendar experience.\n",
+        "description": "Dynamic-event-calendar is a project built using JavaScript, CSS, and HTML to create a responsive and interactive event calendar. This repository focuses on implementing dynamic features to display, manage, and interact with events in a user-friendly calendar interface. It aims to provide a customizable and extendable solution for integrating event scheduling and display into web applications.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/dynamic-event-calendar/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/dynamic-event-calendar",
         "liveLink": "https://calendar-as.vercel.app"
     },
     {
         "title": "iot-asset-tracking",
-        "description": "iot-asset-tracking is a Next.js project built with TypeScript, TailwindCSS, and Supabase for real-time tracking of IoT assets. This repository provides a comprehensive solution utilizing modern web development technologies to visualize and manage the location and status of connected devices, demonstrating a practical application of IoT data and highlighting best practices in frontend architecture and database integration.\n",
+        "description": "iot-asset-tracking is a Next.js project built with TypeScript, TailwindCSS, and Supabase for tracking IoT assets. This repository provides a foundation for developing a robust and scalable asset management solution with a focus on real-time data visualization and efficient backend integration. The project leverages modern web development practices and technologies for a streamlined and maintainable codebase.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/iot-asset-tracking/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/iot-asset-tracking",
         "liveLink": "https://iot-asset-tracking.vercel.app"
     },
     {
-        "title": "genietalks",
-        "description": "GenieTalks is a project built with TypeScript, CSS, JavaScript, HTML, Vite.js, and Express.js to create a platform that leverages the Gemini API. The repository showcases a modern web application stack, demonstrating how to integrate with AI services using TypeScript and providing a foundation for future project development utilizing the Gemini API.\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/genietalks/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/genietalks",
-        "liveLink": "https://genietalks.vercel.app"
-    },
-    {
-        "title": "devboard",
-        "description": "Devboard is a project management application built with Next.js 14 (utilizing the pages router), TypeScript, and styled with CSS and Material UI (MUI). It leverages React Query for efficient data fetching and caching, providing a robust and performant user experience while demonstrating modern web development best practices with a focus on clean code and maintainability.\n",
-        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/devboard/master/screenshot.png",
-        "githubLink": "https://github.com/aayushsiwa/devboard",
-        "liveLink": "https://devboard-pi.vercel.app"
-    },
-    {
         "title": "finance-with-python",
-        "description": "This repository, built using Jupyter Notebooks and Python, contains a collection of finance-related projects. It explores various financial concepts and analyses, aiming to demonstrate practical applications of Python in areas such as portfolio management, financial modeling, and data analysis for investment strategies.\n",
+        "description": "This repository contains Jupyter Notebooks implementing various finance-related projects using Python. It explores topics such as portfolio optimization, risk management, and financial modeling, leveraging Python libraries for data analysis and visualization to provide practical applications in the finance domain.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/finance-with-python/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/finance-with-python",
         "liveLink": "https://py-finance.streamlit.app/"
     },
     {
+        "title": "atg-world",
+        "description": "The atg-world repository houses a web-based project built using TypeScript, JavaScript, HTML, and CSS. This project focuses on [briefly describe the project's purpose - e.g., creating a dynamic interactive world map, building a simulation game, etc.]. It leverages these technologies to deliver [mention key features or functionality - e.g., a user-friendly interface, real-time data visualization, engaging gameplay, etc.].\n",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/atg-world/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/atg-world",
+        "liveLink": "https://atg-world-as.vercel.app"
+    },
+    {
+        "title": "devboard",
+        "description": "Devboard is a project built with Next.js 14 (using the pages router) and TypeScript, designed as a customizable development dashboard. It leverages MUI for its UI components, React Query for efficient data fetching, and modern CSS and JavaScript techniques to provide a robust and user-friendly experience. This repository serves as a template and learning resource for developers looking to build similar web applications with these technologies.\n",
+        "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/devboard/master/screenshot.png",
+        "githubLink": "https://github.com/aayushsiwa/devboard",
+        "liveLink": "https://devboard-pi.vercel.app"
+    },
+    {
         "title": "fruit-seller",
-        "description": "fruit-seller is an e-commerce project built with Next.js 14 (using the pages router), TypeScript, and JavaScript, leveraging MUI for the user interface and React Query for efficient data fetching. This project serves as a demonstration of a type-safe, modern web application focused on fruit sales and explores various aspects of front-end development with a focus on practical application.\n",
+        "description": "fruit-seller is a modern e-commerce project built with Next.js 14, TypeScript, and JavaScript, leveraging the Pages Router. It utilizes MUI for a responsive and user-friendly interface and employs React Query for efficient data fetching and caching. This project demonstrates best practices for building type-safe and scalable web applications with a focus on e-commerce functionality.\n",
         "imgSrc": "https://raw.githubusercontent.com/aayushsiwa/fruit-seller/master/screenshot.png",
         "githubLink": "https://github.com/aayushsiwa/fruit-seller",
         "liveLink": "https://fruit-seller-six.vercel.app"
