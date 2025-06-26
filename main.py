@@ -44,8 +44,10 @@ def generate_repo_descriptions(api_url, api_key, github_token, output_file="./sr
             Repository Name: {repo_name}
             Languages Used: {language_string}
             Repository Topics: {topic_string}
+            Repository URL: {repo_url}
 
             Create a description that highlights the purpose, technologies, and topics.
+            Get some inspiration from the repository's README file if available.
             """
 
             response = model.generate_content(prompt)
