@@ -8,17 +8,17 @@ import Projects from "./Projects/Projects";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen bg-light-bg dark:bg-dark-bg relative pt-32">
-        <div className="md:flex sm:flex-col md:flex-row items-start justify-center w-[90vw] h-[80vh] my-auto 32">
-          <div>
-            <p className="text-6xl leading-relaxed text-light-p dark:text-dark-p font-bold">
-              Hi, I'm Aayush!
+      <div className="flex flex-col items-center justify-center min-h-screen bg-light-bg dark:bg-dark-bg relative pt-24 md:pt-32 pb-10">
+        <div className="flex flex-col md:flex-row items-center justify-center w-[90vw] gap-10 my-auto">
+          <div className="flex-1">
+            <p className="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-relaxed text-light-p dark:text-dark-p font-bold">
+              Hi, I&apos;m Aayush!
             </p>
-            <p className="text-2xl leading-relaxed font-medium text-light-txt dark:text-dark-txt font-[Mulish] w-3/4">
+            <p className="text-base sm:text-xl md:text-2xl leading-relaxed font-medium text-light-txt dark:text-dark-txt font-[Mulish] w-full sm:w-3/4 mt-3">
               Web Developer with 2+ years of experience, aspiring a fulltime
               developer role.
             </p>
-            <span className="flex gap-5 my-10 items-center">
+            <span className="flex flex-wrap gap-5 my-8 items-center">
               <a
                 className="text-5xl"
                 aria-label="LinkedIn"
@@ -59,7 +59,7 @@ export default function Home() {
               </a>
             </span>
           </div>
-          <div className="border-4 border-light-a dark:border-dark-a bg-[url('https://avatars.githubusercontent.com/u/114244228?v=4')] bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out animate-morph rounded-[60%_40%_30%_70%/60%_30%_70%_40%] max-w-[400px] h-[420px] md:w-96 md:h-96 w-md h-112 sm:max-w-md" />
+          <div className="border-4 border-light-a dark:border-dark-a bg-[url('https://avatars.githubusercontent.com/u/114244228?v=4')] bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out animate-morph rounded-[60%_40%_30%_70%/60%_30%_70%_40%] w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 shrink-0 mx-auto" />
         </div>
         <Scroll />
       </div>

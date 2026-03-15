@@ -6,7 +6,7 @@ export type Project = {
   gh_repo: string;
   deployment?: string;
   featured: boolean;
-  img_src: string;
+  img_src?: string;
   // tags?: string[];
   // category?: string;
 };

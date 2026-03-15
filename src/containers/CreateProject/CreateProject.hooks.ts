@@ -114,7 +114,7 @@ export function useCreateProject() {
 
   const projectSchema = z.object({
     title: z.string().min(3, "Title must be at least 3 characters"),
-    description: minWordsInDescription,
+    description: minWordsInDescription, // your existing description validator
     gh_repo: z
       .string()
       .refine(
@@ -123,18 +123,40 @@ export function useCreateProject() {
           val.length > "https://github.com/".length,
         { message: "Enter a valid GitHub repo path (e.g. username/repo-name)" },
       ),
-    deployment: z.url("Enter a valid deployment URL (e.g. myapp.vercel.app)"),
-    img_src: z
+
+    // ✅ Deployment URL optional
+    deployment: z
       .string()
+      .trim()
+      .optional()
+      .or(z.literal("")) // allow empty string
       .refine(
         (val) =>
-          val.startsWith("https://raw.githubusercontent.com/") &&
-          val.length > "https://raw.githubusercontent.com/".length,
+          !val ||
+          (val.startsWith("https://") && val.length > "https://".length),
         {
           message:
-            "Enter a valid raw GitHub image path (e.g. user/repo/branch/image.png)",
+            "Enter a valid deployment URL (e.g. https://myapp.vercel.app)",
         },
       ),
+
+    // ✅ Image URL optional
+    img_src: z
+      .string()
+      .trim()
+      .optional()
+      .or(z.literal("")) // allow empty string
+      .refine(
+        (val) =>
+          !val ||
+          (val.startsWith("https://raw.githubusercontent.com/") &&
+            val.length > "https://raw.githubusercontent.com/".length),
+        {
+          message:
+            "Enter a valid raw GitHub image path (e.g. https://raw.githubusercontent.com/user/repo/branch/image.png)",
+        },
+      ),
+
     featured: z.boolean(),
   });
 
