@@ -1,50 +1,116 @@
-# React + TypeScript + Vite
+# Aayush's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal developer portfolio built with **Next.js 16**, **Tailwind CSS v4**, and **Supabase** — featuring a fully functional admin dashboard to manage projects from the browser.
 
-Currently, two official plugins are available:-
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Database & Auth | Supabase |
+| Validation | Zod v4 |
+| Runtime | React 19 |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Pages & Routes
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+| Route | Description |
+|---|---|
+| `/` | Home — hero section, about, projects grid, and contact |
+| `/login` | Admin login form (email + password via Supabase Auth) |
+| `/admin` | Protected admin dashboard (see below) |
+
+The home page is a single scrollable page composed of four sections:
+
+- **Hero** — introduction, LinkedIn, GitHub, resume and blog links.
+- **About** — bio and skill icons (languages, frontend, backend, tools).
+- **Projects** — cards fetched live from Supabase, featured projects marked with a ⭐.
+- **Contact** — LinkedIn and email links.
+
+---
+
+## Admin Dashboard (`/admin`)
+
+The admin route is protected by Next.js middleware. Any unauthenticated request to `/admin` is redirected to `/login` automatically.
+
+Once logged in, the dashboard provides full CRUD management for projects.
+
+### Features
+
+- **Create a project** — fill in the form and submit. Fields include:
+  - Title
+  - Description (minimum 10 words)
+  - GitHub repo URL — with `https://github.com/` shown as a fixed left-side prefix
+  - Live URL *(optional)* — with `https://` prefix
+  - Image URL — with `https://raw.githubusercontent.com/` prefix
+  - Featured toggle (starred on the public site)
+- **Live preview** — the project card updates in real time as you type.
+- **Conflict detection** — duplicate title, GitHub URL, live URL, or image URL is flagged inline on every keystroke, before you can submit.
+- **Edit a project** — click Edit on any card to load its data back into the form. Clicking Edit scrolls automatically to the top of the page. A Cancel button lets you exit edit mode without saving.
+- **Delete a project** — a confirmation dialog shows the project name before deleting.
+- **Featured badge** — projects with `featured: true` display a yellow ⭐ badge on their card.
+- **Logout** — ends the Supabase session and redirects to `/login`.
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Set up environment variables
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Create a `.env.local` file in the project root:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 3. Run the development server
+
+```bash
+pnpm dev
+```
+
+The app runs on [http://localhost:5178](http://localhost:5178).
+
+### 4. Build for production
+
+```bash
+pnpm build
+pnpm start
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx          # Home page
+│   ├── login/            # Login page
+│   └── admin/            # Admin dashboard (middleware-protected)
+├── components/
+│   └── uiComponents/     # Card, Input, PrefixInput, Navbar, etc.
+├── containers/
+│   ├── CreateProject/    # Form + hooks for project CRUD
+│   ├── Projects/         # Public projects grid
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   └── Home.tsx
+├── lib/
+│   └── supabase/         # Browser and server Supabase clients
+├── types/
+│   └── Project.ts        # Project and NewProject types
+└── middleware.ts          # Auth guard for /admin routes
 ```

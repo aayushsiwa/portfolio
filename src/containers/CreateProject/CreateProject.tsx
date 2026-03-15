@@ -72,53 +72,6 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
     setForm(mapProjectToForm(initialData));
   }, [initialData]);
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) {
-    const { name, value } = e.target;
-    const fieldName = name as keyof NewProject;
-
-    // Prepend fixed prefix for URL fields; keep raw value for everything else.
-    // We construct updatedForm synchronously so checkConflicts sees the new value
-    // before React has flushed the setForm call.
-    const prefix = PREFIX_MAP[fieldName];
-    const fullValue = prefix ? prefix + value : value;
-
-    const updatedForm = { ...form, [fieldName]: fullValue };
-    setForm(updatedForm);
-
-    // 1. Schema validation on the full stored value
-    const schemaResult = projectSchema.shape[fieldName].safeParse(fullValue);
-
-    if (!schemaResult.success) {
-      setErrors((prev) => ({
-        ...prev,
-        [fieldName]: schemaResult.error.issues[0].message,
-      }));
-      return;
-    }
-
-    // 2. Schema passed — run conflict check for conflict-trackable fields
-    if (CONFLICT_FIELDS.has(fieldName)) {
-      const allConflicts = checkConflicts(updatedForm, initialData?.id);
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[fieldName];
-        if (allConflicts[fieldName]) {
-          next[fieldName] = allConflicts[fieldName];
-        }
-        return next;
-      });
-    } else {
-      // Not a conflict-checkable field — just clear any stale error
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[fieldName];
-        return next;
-      });
-    }
-  }
-
   function handleCheckboxChange(e: React.ChangeEvent<HTMLInputElement>) {
     setForm((prev) => ({ ...prev, featured: e.target.checked }));
   }
@@ -164,9 +117,26 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
   const isFormValid = useMemo(() => {
     if (Object.keys(errors).length > 0) return false;
 
-    return Object.entries(form).every(([_key, value]) =>
-      typeof value === "boolean" ? true : value.trim() !== "",
+    type OptionalKeys<T> = {
+      [K in keyof T]-?: {} extends Pick<T, K> ? K : never;
+    }[keyof T];
+
+    const optionalKeys = new Set<OptionalKeys<NewProject>>(
+      Object.keys(form).filter((k) => {
+        type K = typeof k;
+        // TS magic: check if key is optional
+        return {} as Pick<NewProject, K> extends Pick<NewProject, K>
+          ? true
+          : false;
+      }) as OptionalKeys<NewProject>[],
     );
+
+    return (Object.keys(form) as Array<keyof NewProject>).every((key) => {
+      const value = form[key];
+      if (typeof value === "boolean") return true; // boolean always valid
+      if (optionalKeys.has(key as OptionalKeys<NewProject>)) return true; // optional fields can be empty
+      return value?.trim() !== ""; // required string fields must be non-empty
+    });
   }, [form, errors]);
 
   /** Border-only wrapper class used by PrefixInput (no padding — inner elements handle it). */
@@ -181,6 +151,52 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
     return `w-full border p-3 rounded-lg transition ${
       errors[name] ? "border-red-500" : "border-gray-300"
     }`;
+  }
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) {
+    const { name, value } = e.target;
+    const fieldName = name as keyof NewProject;
+
+    const prefix = PREFIX_MAP[fieldName];
+    // Only add prefix if user typed something
+    const fullValue = value.trim() !== "" && prefix ? prefix + value : "";
+
+    const updatedForm = { ...form, [fieldName]: fullValue };
+    setForm(updatedForm);
+
+    // 1. Schema validation on the full stored value
+    const schemaResult = projectSchema.shape[fieldName].safeParse(fullValue);
+
+    if (!schemaResult.success) {
+      console.log(schemaResult.error.issues);
+      setErrors((prev) => ({
+        ...prev,
+        [fieldName]: schemaResult.error.issues[0].message,
+      }));
+      return;
+    }
+
+    // 2. Schema passed — run conflict check for conflict-trackable fields
+    if (CONFLICT_FIELDS.has(fieldName)) {
+      const allConflicts = checkConflicts(updatedForm, initialData?.id);
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[fieldName];
+        if (allConflicts[fieldName]) {
+          next[fieldName] = allConflicts[fieldName];
+        }
+        return next;
+      });
+    } else {
+      // Not a conflict-checkable field — just clear any stale error
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[fieldName];
+        return next;
+      });
+    }
   }
 
   return (

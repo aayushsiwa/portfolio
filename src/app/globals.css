@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans: var(--font-mulish);
+    --font-display: var(--font-poppins);
+    /* --font-sans: Bricolage Grotesque, sans-serif; */
+
+    --color-dark-txt: #e4ebe1;
+    --color-dark-bg: #070b05;
+    --color-dark-bg2: #121212;
+    --color-dark-p: #b0dc99;
+    --color-dark-s: #3e7f1c;
+    --color-dark-a: #63e520;
+
+    --color-light-txt: #171f14;
+    --color-light-bg: #f6faf4;
+    --color-light-bg2: #f6ffff;
+    --color-light-p: #3b6723;
+    --color-light-s: #a4e382;
+    --color-light-a: #5ce01a;
+
+    --animate-morph: morph 8s ease-in-out infinite;
+    --animate-rotate: rotate 20s linear infinite;
+
+    @keyframes morph {
+        0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+        100% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+    }
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
+
+* {
+    /* box-sizing: border-box; */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* overflow-x: hidden; */
+}
+
+html {
+    /* font-size: 62.5%; */
+    scroll-behavior: smooth;
+}
+
+html.dark {
+    background: #070b05;
+}
+
+body {
+    /* background-color: white; */
+    font-family: "Bricolage Grotesque", sans-serif;
+    /* font-optical-sizing: auto; */
+    /* position: relative; */
+    /* background: black; */
+}
+/* Firefox */
+* {
+    scrollbar-width: none;
+    scrollbar-color: #2600ff #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #8e8e8e;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #878787;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #8e8e8e;
+}
+
+.mobile-menu {
+    /* font-size: 2.3rem; */
+    cursor: pointer;
+    display: none;
+}
+.mobile-menu:hover {
+    /* color: #147efb; */
+    transition: all 0.3s;
+}
+@media (max-width: 900px) {
+    .mobile-menu {
+        display: flex;
+    }
+}
+
+.closed-menu {
+    left: -100% !important;
+}
+
+.open-menu {
+    left: 0 !important;
+}
+
+.mobile-nav {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    z-index: 300;
+    background-color: rgba(246, 250, 244, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+html.dark .mobile-nav {
+    background-color: rgba(7, 11, 5, 0.95);
+}
+.mobile-nav span {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+.mobile-nav span:hover {
+    transition: all 0.3s;
+}
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    font-size: 1.5rem;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.mobile-nav ul a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+.mobile-nav ul a:hover {
+    transition: all 0.3s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.project_screenshot :hover {
+    overflow-y: scroll;
+    /* transition: overflow-y 5s ease-in-out; */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(-70%);
+    }
+}
+
+.project_screenshot:hover {
+    animation: scroll 5s ease-out;
+}
