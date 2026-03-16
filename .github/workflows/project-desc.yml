@@ -1,8 +1,8 @@
 name: Generate Repo Descriptions
 
 on:
-  schedule:
-    - cron: '0 0 */2 * *'  # Every Two days at 12:00 AM UTC
+  # schedule:
+  # - cron: '0 0 */2 * *'  # Every Two days at 12:00 AM UTC
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install dependencies
         run: pip install requests google-generativeai
