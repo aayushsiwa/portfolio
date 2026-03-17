@@ -1,4 +1,3 @@
-import React from "react";
 import { Project } from "@/types/Project";
 import { FaCode, FaStar } from "react-icons/fa6";
 import { MdOutput } from "react-icons/md";

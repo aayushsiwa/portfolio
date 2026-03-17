@@ -1,5 +1,5 @@
-import Projects from "@/containers/Projects/Projects";
+import { Projects } from "@/containers/Projects/Projects";
 
-export default function Home() {
+export default function ProjectsPage() {
   return <Projects />;
 }

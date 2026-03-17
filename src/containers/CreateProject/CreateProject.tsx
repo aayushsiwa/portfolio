@@ -1,206 +1,50 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
 import { NewProject, Project } from "@/types/Project";
+import { useProjects } from "@/lib/useProjects";
+import { useProjectForm } from "./useProjectForm";
+import { PREFIX_MAP, getSuffix } from "./prefixes";
 import Card from "@/components/uiComponents/Card";
-import { useCreateProject } from "./CreateProject.hooks";
 import { Input, PrefixInput, Textarea } from "@/components/uiComponents/Input";
 
-type Props = {
+interface CreateProjectProps {
   onSubmit: (data: NewProject) => Promise<void> | void;
   onCancel?: () => void;
   initialData?: Project;
-};
-
-const EMPTY_PROJECT: NewProject = {
-  title: "",
-  description: "",
-  gh_repo: "",
-  deployment: "",
-  img_src: "",
-  featured: false,
-};
-
-function mapProjectToForm(data?: Project): NewProject {
-  if (!data) return EMPTY_PROJECT;
-
-  return {
-    title: data.title ?? "",
-    description: data.description ?? "",
-    gh_repo: data.gh_repo ?? "",
-    deployment: data.deployment ?? "",
-    img_src: data.img_src ?? "",
-    featured: data.featured ?? false,
-  };
 }
 
-const CONFLICT_FIELDS = new Set<keyof NewProject>([
-  "title",
-  "gh_repo",
-  "deployment",
-  "img_src",
-]);
+export function CreateProject({
+  onSubmit,
+  onCancel,
+  initialData,
+}: CreateProjectProps) {
+  const { projects } = useProjects();
 
-/** Fixed URL prefixes shown as left-side badges inside the input. */
-const PREFIX_MAP: Partial<Record<keyof NewProject, string>> = {
-  gh_repo: "https://github.com/aayushsiwa/",
-  deployment: "https://",
-  img_src: "https://raw.githubusercontent.com/aayushsiwa/",
-};
+  const {
+    form,
+    errors,
+    loading,
+    isFormValid,
+    handleChange,
+    handleCheckboxChange,
+    handleSubmit,
+    reset,
+  } = useProjectForm({ initialData, projects, onSubmit });
 
-/**
- * Returns the part of `fullValue` that comes after `prefix`.
- * Falls back to `fullValue` as-is when it doesn't start with the prefix
- * (handles legacy data stored without the expected prefix).
- */
-function getSuffix(fullValue: string, prefix: string): string {
-  return fullValue.startsWith(prefix)
-    ? fullValue.slice(prefix.length)
-    : fullValue;
-}
-
-export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
-  const [form, setForm] = useState<NewProject>(() =>
-    mapProjectToForm(initialData),
-  );
-  const { projectSchema, checkConflicts } = useCreateProject();
-
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setForm(mapProjectToForm(initialData));
-  }, [initialData]);
-
-  function handleCheckboxChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setForm((prev) => ({ ...prev, featured: e.target.checked }));
-  }
-
-  async function handleSubmit() {
-    const result = projectSchema.safeParse(form);
-
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-
-      result.error.issues.forEach((err) => {
-        const key = err.path[0];
-        if (key) fieldErrors[String(key)] = err.message;
-      });
-
-      setErrors(fieldErrors);
-      return;
-    }
-
-    // Final safety-net conflict check (covers race conditions between last
-    // keystroke and submit, e.g. another tab added a project in between)
-    const conflicts = checkConflicts(form, initialData?.id);
-
-    if (Object.keys(conflicts).length > 0) {
-      setErrors(conflicts);
-      return;
-    }
-
-    setErrors({});
-    setLoading(true);
-
-    try {
-      await onSubmit(form);
-
-      if (!initialData) {
-        setForm(EMPTY_PROJECT);
-      }
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  const isFormValid = useMemo(() => {
-    if (Object.keys(errors).length > 0) return false;
-
-    type OptionalKeys<T> = {
-      [K in keyof T]-?: {} extends Pick<T, K> ? K : never;
-    }[keyof T];
-
-    const optionalKeys = new Set<OptionalKeys<NewProject>>(
-      Object.keys(form).filter((k) => {
-        type K = typeof k;
-        // TS magic: check if key is optional
-        return {} as Pick<NewProject, K> extends Pick<NewProject, K>
-          ? true
-          : false;
-      }) as OptionalKeys<NewProject>[],
-    );
-
-    return (Object.keys(form) as Array<keyof NewProject>).every((key) => {
-      const value = form[key];
-      if (typeof value === "boolean") return true; // boolean always valid
-      if (optionalKeys.has(key as OptionalKeys<NewProject>)) return true; // optional fields can be empty
-      return value?.trim() !== ""; // required string fields must be non-empty
-    });
-  }, [form, errors]);
-
-  /** Border-only wrapper class used by PrefixInput (no padding — inner elements handle it). */
-  function prefixContainerClass(name: keyof NewProject) {
-    return `flex items-stretch w-full border rounded-lg transition overflow-hidden ${
-      errors[name] ? "border-red-500" : "border-gray-300"
-    }`;
-  }
-
-  /** Full input class used by regular Input / Textarea (border + padding). */
   function inputClass(name: keyof NewProject) {
     return `w-full border p-3 rounded-lg transition ${
       errors[name] ? "border-red-500" : "border-gray-300"
     }`;
   }
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) {
-    const { name, value } = e.target;
-    const fieldName = name as keyof NewProject;
-
-    const prefix = PREFIX_MAP[fieldName];
-    // Only add prefix if user typed something
-    const fullValue = value.trim() !== "" && prefix ? prefix + value : "";
-
-    const updatedForm = { ...form, [fieldName]: fullValue };
-    setForm(updatedForm);
-
-    // 1. Schema validation on the full stored value
-    const schemaResult = projectSchema.shape[fieldName].safeParse(fullValue);
-
-    if (!schemaResult.success) {
-      console.log(schemaResult.error.issues);
-      setErrors((prev) => ({
-        ...prev,
-        [fieldName]: schemaResult.error.issues[0].message,
-      }));
-      return;
-    }
-
-    // 2. Schema passed — run conflict check for conflict-trackable fields
-    if (CONFLICT_FIELDS.has(fieldName)) {
-      const allConflicts = checkConflicts(updatedForm, initialData?.id);
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[fieldName];
-        if (allConflicts[fieldName]) {
-          next[fieldName] = allConflicts[fieldName];
-        }
-        return next;
-      });
-    } else {
-      // Not a conflict-checkable field — just clear any stale error
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[fieldName];
-        return next;
-      });
-    }
+  function prefixContainerClass(name: keyof NewProject) {
+    return `flex items-stretch w-full border rounded-lg transition overflow-hidden ${
+      errors[name] ? "border-red-500" : "border-gray-300"
+    }`;
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  gap-10 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
       {/* FORM */}
       <div className="space-y-4">
         <Input
@@ -251,7 +95,7 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
           containerClass={prefixContainerClass("img_src")}
         />
 
-        <label className="flex items-center gap-2">
+        <label className="flex items-center gap-2 cursor-pointer select-none">
           <input
             type="checkbox"
             checked={form.featured}
@@ -264,10 +108,10 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
           <button
             onClick={handleSubmit}
             disabled={!isFormValid || loading}
-            className="bg-black text-white px-6 py-3 rounded-lg disabled:opacity-50"
+            className="bg-black text-white px-6 py-3 rounded-lg disabled:opacity-50 transition-opacity"
           >
             {loading
-              ? "Saving..."
+              ? "Saving…"
               : initialData
                 ? "Update Project"
                 : "Add Project"}
@@ -277,8 +121,8 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
             <button
               type="button"
               onClick={() => {
+                reset();
                 onCancel();
-                setErrors({});
               }}
               className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
             >
@@ -291,13 +135,7 @@ export function CreateProject({ onSubmit, onCancel, initialData }: Props) {
       {/* LIVE PREVIEW */}
       <div>
         <h2 className="mb-4 font-semibold text-xl">Live Preview</h2>
-        <Card
-          data={{
-            ...form,
-            id: "",
-            created_at: "",
-          }}
-        />
+        <Card data={{ ...form, id: "", created_at: "" }} />
       </div>
     </div>
   );
