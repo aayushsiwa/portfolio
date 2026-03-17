@@ -14,7 +14,7 @@ export default function Contact() {
               Contact
             </p>
             <h3 className="text-light-txt dark:text-dark-txt text-[2.5rem] font-extrabold">
-              Don't be shy! Hit me up! 👇
+              Don&apos;t be shy! Hit me up! 👇
             </h3>
           </div>
           <div className="flex gap-32 flex-wrap mt-12">

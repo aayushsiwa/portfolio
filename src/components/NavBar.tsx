@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { Switch } from "./uiComponents/Switch";
-import Link from "next/link";
 import { useTheme } from "next-themes";
+import Link from "vinext/shims/link";
 
 export function NavBar() {
   const { resolvedTheme, setTheme } = useTheme();

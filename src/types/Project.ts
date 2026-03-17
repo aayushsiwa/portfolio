@@ -12,3 +12,5 @@ export type Project = {
 };
 
 export type NewProject = Omit<Project, "id" | "created_at">;
+
+export type UpdateProject = Partial<NewProject>;

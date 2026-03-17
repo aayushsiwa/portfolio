@@ -3,7 +3,7 @@ import { FiGithub } from "react-icons/fi";
 import Scroll from "../components/uiComponents/Scroll";
 import About from "./About";
 import Contact from "./Contact";
-import Projects from "./Projects/Projects";
+import { Projects } from "./Projects/Projects";
 
 export default function Home() {
   return (
