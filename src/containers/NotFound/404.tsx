@@ -1,5 +1,5 @@
 "use client";
-import Link from "vinext/shims/link";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -10,7 +10,7 @@ export default function NotFound() {
       <h2 className="text-2xl font-semibold text-light-p dark:text-dark-p mb-2">
         Oops! Page not found
       </h2>
-      <p className="text-dark-s dark:text-dark-s mb-6 text-center max-w-sm">
+      <p className="text-dark-s mb-6 text-center max-w-sm">
         The page you are looking for might have been removed, had its name
         changed, or is temporarily unavailable.
       </p>

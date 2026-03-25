@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
       </a>
       <a
         className="text-4xl text-white hover:scale-125 transition-transform duration-200"
-        aria-label="GitHub"
+        aria-label="Leetcode"
         target="_blank"
         rel="noreferrer"
         href="https://leetcode.com/u/aayushsiwa/"
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
       </a>
       <a
         className="text-4xl text-white hover:scale-125 transition-transform duration-200"
-        aria-label="GitHub"
+        aria-label="HackerRank"
         target="_blank"
         rel="noreferrer"
         href="https://www.hackerrank.com/profile/h22052177"

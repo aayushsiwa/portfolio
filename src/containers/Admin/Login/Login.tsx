@@ -1,7 +1,7 @@
 "use client";
 import { useLogin } from "./Login.hooks";
 
-export default function Login() {
+export const Login = () => {
   const { handleLogin, errors, loading } = useLogin();
 
   function inputClass(name: string) {
@@ -53,4 +53,4 @@ export default function Login() {
       </form>
     </div>
   );
-}
+};

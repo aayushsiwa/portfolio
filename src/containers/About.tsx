@@ -1,5 +1,4 @@
 "use client";
-
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -47,7 +46,7 @@ const tools = [
   "bash",
   "figma",
   "grafana",
-  "loki",
+  // "loki",
   "prometheus",
   "vitest",
 ];
@@ -89,10 +88,10 @@ function SkillRow({ label, skills }: { label: string; skills: string[] }) {
   );
 }
 
-export default function About() {
+export const About = () => {
   return (
     <section
-      className="bg-light-bg2 dark:bg-dark-bg2 h-screen flex flex-col pt-32"
+      className="bg-light-bg2 dark:bg-dark-bg2 flex flex-col pt-32 min-h-fit md:min-h-screen"
       id="about"
     >
       <div className="mx-auto pb-10 w-[90vw]">
@@ -107,6 +106,7 @@ export default function About() {
               <a
                 href="https://kiit.ac.in/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="font-semibold"
               >
                 KIIT
@@ -131,4 +131,4 @@ export default function About() {
       </div>
     </section>
   );
-}
+};

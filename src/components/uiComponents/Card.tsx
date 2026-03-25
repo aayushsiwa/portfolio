@@ -18,14 +18,13 @@ const Card = ({
         </div>
       )}
 
-      <div className="w-full h-48 sm:h-52 bg-transparent overflow-hidden">
+      <div className="w-full h-48 sm:h-52 bg-transparent overflow-hidden relative">
         {data.img_src ? (
           <Image
-            width={512}
-            height={720}
+            fill
             src={data.img_src}
-            alt=""
-            className="rounded-t-xl transform transition-transform duration-500 ease-in-out hover:-translate-y-1/4"
+            alt={data.title}
+            className="rounded-t-xl object-cover transform transition-transform duration-500 ease-in-out hover:-translate-y-1/4"
           />
         ) : (
           <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">

@@ -1,7 +1,8 @@
 import { CiLinkedin } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 
-export default function Contact() {
+export const Contact = () => {
+  const contactEmail = "aayush@aayushsiwa.is-a.dev";
   return (
     <section
       id="contact"
@@ -22,6 +23,8 @@ export default function Contact() {
               <a
                 href="https://linkedin.com/in/aayushsiwa"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Aayush Siwach's LinkedIn profile in a new tab"
                 className="hover:scale-110 transition-transform"
               >
                 <span className="flex bg-white dark:bg-dark-bg  w-20 items-center justify-center h-20 shadow-md dark:shadow-dark-s rounded-full text-[#147efb]">
@@ -32,15 +35,17 @@ export default function Contact() {
                 <h3 className="text-[1.7rem] text-light-txt dark:text-dark-txt">
                   LinkedIn
                 </h3>
-                <p className="text-[1.7rem] text-light-p dark:text-dark-p">
+                <p className="text-xl md:text-[1.7rem] text-light-p dark:text-dark-p">
                   Aayush Siwach
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-6">
               <a
-                href="mailto:aayush@aayushsiwa.is-a.dev"
-                className="flex bg-white dark:bg-dark-bg w-20 items-center justify-center h-20 shadow-md dark:shadow-dark-s rounded-full text-[#147efb] hover:scale-110 transition-transform"
+                href={`mailto:${contactEmail}`}
+                rel="noopener noreferrer"
+                aria-label="Send an email to aayush@aayushsiwa.is-a.dev"
+                className="flex bg-white dark:bg-dark-bg w-20 items-center justify-center h-20 shadow-md dark:shadow-dark-s rounded-full  hover:scale-110 transition-transform"
               >
                 <CiMail size={48} color="#5ce01a" />
               </a>
@@ -49,10 +54,10 @@ export default function Contact() {
                   Mail
                 </h3>
                 <a
-                  href="mailto:aayush@aayushsiwa.is-a.dev"
-                  className="text-[1.7rem] text-light-p dark:text-dark-p"
+                  href={`mailto:${contactEmail}`}
+                  className="text-xl md:text-[1.7rem] text-light-p dark:text-dark-p"
                 >
-                  aayush@aayushsiwa.is-a.dev
+                  {contactEmail}
                 </a>
               </div>
             </div>
@@ -61,4 +66,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};

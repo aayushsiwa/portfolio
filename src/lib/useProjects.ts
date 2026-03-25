@@ -1,5 +1,4 @@
 "use client";
-
 import { useCallback, useEffect, useState } from "react";
 import {
   fetchAllProjects,
@@ -8,6 +7,7 @@ import {
   deleteProject,
 } from "@/api/projects.api";
 import { NewProject, Project, UpdateProject } from "@/types/Project";
+import { createClient } from "./supabase/client";
 
 interface UseProjectsReturn {
   projects: Project[];
@@ -20,6 +20,7 @@ interface UseProjectsReturn {
 }
 
 export function useProjects(): UseProjectsReturn {
+  const supabaseClient = createClient();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,36 +29,65 @@ export function useProjects(): UseProjectsReturn {
     setLoading(true);
     setError(null);
     try {
-      const data = await fetchAllProjects();
+      const data = await fetchAllProjects(supabaseClient);
       setProjects(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to fetch projects");
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [supabaseClient]);
 
   useEffect(() => {
     refetch();
   }, [refetch]);
 
-  const addProject = useCallback(async (project: NewProject) => {
-    const created = await createProject(project);
-    setProjects((prev) => [created, ...prev]);
-  }, []);
+  const addProject = useCallback(
+    async (project: NewProject) => {
+      setError(null);
+      try {
+        const created = await createProject(supabaseClient, project);
+        setProjects((prev) => [created, ...prev]);
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "Failed to create project",
+        );
+        throw err;
+      }
+    },
+    [supabaseClient],
+  );
 
   const editProject = useCallback(
     async (id: string, updates: UpdateProject) => {
-      const updated = await updateProject(id, updates);
-      setProjects((prev) => prev.map((p) => (p.id === id ? updated : p)));
+      setError(null);
+      try {
+        const updated = await updateProject(supabaseClient, id, updates);
+        setProjects((prev) => prev.map((p) => (p.id === id ? updated : p)));
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "Failed to update project",
+        );
+        throw err;
+      }
     },
-    [],
+    [supabaseClient],
   );
-
-  const removeProject = useCallback(async (id: string) => {
-    await deleteProject(id);
-    setProjects((prev) => prev.filter((p) => p.id !== id));
-  }, []);
+  const removeProject = useCallback(
+    async (id: string) => {
+      setError(null);
+      try {
+        await deleteProject(supabaseClient, id);
+        setProjects((prev) => prev.filter((p) => p.id !== id));
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "Failed to delete project",
+        );
+        throw err;
+      }
+    },
+    [supabaseClient],
+  );
 
   return {
     projects,

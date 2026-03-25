@@ -4,7 +4,7 @@ import { useAdminHooks } from "./Admin.hooks";
 import { CreateProject } from "@/containers/CreateProject/CreateProject";
 import { ProjectCard } from "./AdminProjectCard";
 
-export default function AdminPage() {
+export const AdminPage = () => {
   const {
     projects,
     loading,
@@ -68,4 +68,4 @@ export default function AdminPage() {
       )}
     </div>
   );
-}
+};

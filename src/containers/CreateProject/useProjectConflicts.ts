@@ -23,7 +23,13 @@ export function useProjectConflicts(projects: Project[]) {
         conflicts.title = "A project with this title already exists";
       }
 
-      if (others.some((p) => p.gh_repo === data.gh_repo)) {
+      const normalizeRepo = (value: string) => value.trim().replace(/\/+$/, "");
+
+      if (
+        others.some(
+          (p) => normalizeRepo(p.gh_repo) === normalizeRepo(data.gh_repo),
+        )
+      ) {
         conflicts.gh_repo =
           "This GitHub repo URL is already used by another project";
       }
