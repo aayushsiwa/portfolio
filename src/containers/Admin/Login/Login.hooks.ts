@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { z } from "zod";
-import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/router";
+import { supabaseBrowserClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -11,7 +11,7 @@ const loginSchema = z.object({
 
 export const useLogin = () => {
   const router = useRouter();
-  const supabase = createClient();
+  const supabase = supabaseBrowserClient;
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});

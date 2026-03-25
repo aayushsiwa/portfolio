@@ -15,11 +15,7 @@ export function NavBar() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null; // or a small placeholder
-  }
-
-  const isDarkMode = resolvedTheme === "dark";
+  const isDarkMode = mounted && resolvedTheme === "dark";
 
   const toggleDarkMode = () => {
     setTheme(isDarkMode ? "light" : "dark");
@@ -93,7 +89,6 @@ export function NavBar() {
             strokeLinecap="round"
             strokeLinejoin="round"
             className="stroke-light-a dark:stroke-dark-a hover:stroke-light-p dark:hover:stroke-dark-p md:hidden"
-            onClick={handleMenuToggle}
           >
             <path d="M4 6l16 0" />
             <path d="M4 12l16 0" />
@@ -101,77 +96,79 @@ export function NavBar() {
           </svg>
         </button>
       </nav>
-      <div
-        className={`mobile-nav bg-light-bg/95 dark:bg-dark-bg/95 backdrop-blur-lg ${
-          isMenuOpen ? "open-menu" : "closed-menu"
-        }`}
-        onClick={handleMenuToggle}
-      >
-        <span className="absolute top-5 right-5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={32}
-            height={32}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="tabler-icon tabler-icon-x cursor-pointer stroke-light-a dark:stroke-dark-a hover:stroke-light-p dark:hover:stroke-dark-p"
+      {isMenuOpen && (
+        <div className="mobile-nav open-menu bg-light-bg/95 dark:bg-dark-bg/95 backdrop-blur-lg">
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-5 right-5"
           >
-            <path d="M18 6l-12 12" />
-            <path d="M6 6l12 12" />
-          </svg>
-        </span>
-        <ul onClick={(e) => e.stopPropagation()}>
-          <li
-            onClick={() => {
-              toggleDarkMode();
-              setIsMenuOpen(false);
-            }}
-            className="flex justify-center cursor-pointer text-light-a dark:text-dark-a text-2xl transition ease-in duration-300 hover:scale-125"
-          >
-            {isDarkMode ? <FiSun /> : <FiMoon />}
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={32}
+              height={32}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="tabler-icon tabler-icon-x cursor-pointer stroke-light-a dark:stroke-dark-a hover:stroke-light-p dark:hover:stroke-dark-p"
             >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/#about"
-              className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/#projects"
-              className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/#contact"
-              className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </button>
+          <ul onClick={(e) => e.stopPropagation()}>
+            <li className="flex justify-center">
+              <button
+                onClick={() => {
+                  toggleDarkMode();
+                  setIsMenuOpen(false);
+                }}
+                className="cursor-pointer text-light-a dark:text-dark-a text-2xl transition ease-in duration-300 hover:scale-125"
+              >
+                {isDarkMode ? <FiSun /> : <FiMoon />}
+              </button>
+            </li>
+            <li>
+              <Link
+                href="/#"
+                className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#about"
+                className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#projects"
+                className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#contact"
+                className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </>
   );
 }

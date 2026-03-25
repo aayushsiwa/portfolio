@@ -7,7 +7,7 @@ import {
   deleteProject,
 } from "@/api/projects.api";
 import { NewProject, Project, UpdateProject } from "@/types/Project";
-import { createClient } from "./supabase/client";
+import { supabaseBrowserClient } from "./supabase/client";
 
 interface UseProjectsReturn {
   projects: Project[];
@@ -20,7 +20,7 @@ interface UseProjectsReturn {
 }
 
 export function useProjects(): UseProjectsReturn {
-  const supabaseClient = createClient();
+  const supabaseClient = supabaseBrowserClient;
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -47,7 +47,9 @@ export function useProjects(): UseProjectsReturn {
       setError(null);
       try {
         const created = await createProject(supabaseClient, project);
-        setProjects((prev) => [created, ...prev]);
+        if (created) {
+          setProjects((prev) => [created, ...prev]);
+        }
       } catch (err) {
         setError(
           err instanceof Error ? err.message : "Failed to create project",
@@ -63,7 +65,9 @@ export function useProjects(): UseProjectsReturn {
       setError(null);
       try {
         const updated = await updateProject(supabaseClient, id, updates);
-        setProjects((prev) => prev.map((p) => (p.id === id ? updated : p)));
+        if (updated) {
+          setProjects((prev) => prev.map((p) => (p.id === id ? updated : p)));
+        }
       } catch (err) {
         setError(
           err instanceof Error ? err.message : "Failed to update project",

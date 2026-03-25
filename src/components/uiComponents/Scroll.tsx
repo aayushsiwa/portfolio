@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const Scroll = () => {
   return (
-    <div className="animate-bounce animate-infinite animate-duration-1500 animate-ease-in-out">
-      <Link href="#about">
+    <Link href="#about">
+      <div className="animate-[bounce_2s_ease-in-out_infinite]">
         <div>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0h24v24H0z" fill="none" />
@@ -14,8 +14,8 @@ export const Scroll = () => {
             ></path>
           </svg>
         </div>
-        <span className="text-light-p dark:text-dark-p">Scroll</span>
-      </Link>
-    </div>
+      </div>
+      <span className="text-light-p dark:text-dark-p">Scroll</span>
+    </Link>
   );
 };

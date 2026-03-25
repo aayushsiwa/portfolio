@@ -52,7 +52,7 @@ const tools = [
 ];
 
 function SkillRow({ label, skills }: { label: string; skills: string[] }) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -75,8 +75,8 @@ function SkillRow({ label, skills }: { label: string; skills: string[] }) {
             <Image
               height={64}
               width={64}
-              className="transition ease-in duration-300 hover:scale-100 scale-[0.6] md:scale-75 hover:-translate-y-2"
-              src={`https://skillicons.dev/icons?i=${skill}&theme=${theme}`}
+              className="transition-all ease-in duration-300 hover:scale-100 scale-[0.6] md:scale-75 hover:-translate-y-2"
+              src={`https://skillicons.dev/icons?i=${skill}&theme=${resolvedTheme}`}
               alt={`${skill}-icon`}
               loading="lazy"
               unoptimized

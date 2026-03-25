@@ -9,8 +9,9 @@ const requiredEnv = [
 
 for (const key of requiredEnv) {
   if (!process.env[key]) {
-    throw new Error(`
-issing required environment variable: ${key}`);
+    throw new Error(
+      `missing required environment variable: ${key.split("_")[-1]}`,
+    );
   }
 }
 

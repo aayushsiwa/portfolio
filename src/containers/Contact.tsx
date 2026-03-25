@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-light-bg2 dark:bg-dark-bg2 min-h-screen py-20 flex items-center pt-32"
+      className="bg-light-bg2 dark:bg-dark-bg2 min-h-screen flex items-center pt-32"
     >
       <div className="max-w-[90vw] mx-auto pb-10">
         <div className="flex flex-col">
@@ -44,7 +44,7 @@ export const Contact = () => {
               <a
                 href={`mailto:${contactEmail}`}
                 rel="noopener noreferrer"
-                aria-label="Send an email to aayush@aayushsiwa.is-a.dev"
+                aria-label={`Send an email to ${contactEmail}`}
                 className="flex bg-white dark:bg-dark-bg w-20 items-center justify-center h-20 shadow-md dark:shadow-dark-s rounded-full  hover:scale-110 transition-transform"
               >
                 <CiMail size={48} color="#5ce01a" />

@@ -3,14 +3,14 @@
 import { useState, useCallback } from "react";
 import { Project, NewProject } from "@/types/Project";
 import { useProjects } from "@/lib/useProjects";
-import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/router";
+import { supabaseBrowserClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 export function useAdminHooks() {
   const { projects, loading, error, addProject, editProject, removeProject } =
     useProjects();
   const router = useRouter();
-  const supabase = createClient();
+  const supabase = supabaseBrowserClient;
 
   async function logout() {
     await supabase.auth.signOut();
