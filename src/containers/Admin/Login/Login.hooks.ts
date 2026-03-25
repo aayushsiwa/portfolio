@@ -16,6 +16,11 @@ export const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  /**
+   * Handles submission of the admin login form: validates `email` and `password`, attempts sign-in with Supabase, updates `loading` and `errors` state, and navigates to `/admin` on success.
+   *
+   * @param e - The form submit event whose form must include `email` and `password` fields
+   */
   async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
