@@ -1,6 +1,5 @@
 "use client";
-
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { NewProject, Project } from "@/types/Project";
 import { projectSchema } from "./validations/project.schema";
 import { useProjectConflicts } from "./useProjectConflicts";
@@ -50,6 +49,7 @@ export function useProjectForm({
   );
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
+  const submittingRef = useRef(false);
 
   const { checkConflicts } = useProjectConflicts(projects);
 
@@ -108,6 +108,8 @@ export function useProjectForm({
   );
 
   const handleSubmit = useCallback(async () => {
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     const result = projectSchema.safeParse(form);
 
     if (!result.success) {
@@ -117,13 +119,15 @@ export function useProjectForm({
         if (key) fieldErrors[String(key)] = err.message;
       });
       setErrors(fieldErrors);
+      submittingRef.current = false;
       return;
     }
 
     // Race-condition safety: re-check conflicts right before submit
-    const conflicts = checkConflicts(form, initialData?.id);
+    const conflicts = checkConflicts(result.data, initialData?.id);
     if (Object.keys(conflicts).length > 0) {
       setErrors(conflicts);
+      submittingRef.current = false;
       return;
     }
 
@@ -131,9 +135,10 @@ export function useProjectForm({
     setLoading(true);
 
     try {
-      await onSubmit(form);
+      await onSubmit(result.data);
       if (!initialData) setForm(EMPTY_PROJECT);
     } finally {
+      submittingRef.current = false;
       setLoading(false);
     }
   }, [form, checkConflicts, initialData, onSubmit]);

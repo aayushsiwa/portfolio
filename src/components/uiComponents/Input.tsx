@@ -10,23 +10,49 @@ type BaseInputProps = {
 };
 
 export function Input(props: BaseInputProps) {
-  const { error, ...rest } = props;
+  const { error, name, ...rest } = props;
+  const errorId = error
+    ? `
+  ${name}-error`
+    : undefined;
 
   return (
     <div>
-      <input {...rest} />
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      <input
+        name={name}
+        {...rest}
+        aria-invalid={Boolean(error)}
+        aria-describedby={errorId}
+      />
+      {error && (
+        <p id={errorId} role="alert" className="text-red-500 text-sm mt-1">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
 
 export function Textarea(props: BaseInputProps) {
-  const { error, ...rest } = props;
+  const { error, name, ...rest } = props;
+  const errorId = error
+    ? `
+  ${name}-error`
+    : undefined;
 
   return (
     <div>
-      <textarea {...rest} />
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      <textarea
+        name={name}
+        {...rest}
+        aria-invalid={Boolean(error)}
+        aria-describedby={errorId}
+      />
+      {error && (
+        <p id={errorId} role="alert" className="text-red-500 text-sm mt-1">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -52,6 +78,10 @@ export function PrefixInput({
   onChange,
   containerClass,
 }: PrefixInputProps) {
+  const errorId = error
+    ? `
+  ${name}-error`
+    : undefined;
   return (
     <div>
       <div className={containerClass}>
@@ -63,10 +93,16 @@ export function PrefixInput({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          aria-invalid={Boolean(error)}
+          aria-describedby={errorId}
           className="flex-1 outline-none bg-transparent px-3 py-3 min-w-0 text-sm"
         />
       </div>
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      {error && (
+        <p id={errorId} role="alert" className="text-red-500 text-sm mt-1">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

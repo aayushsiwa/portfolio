@@ -1,11 +1,11 @@
 import { CiLinkedin } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
-import Scroll from "../components/uiComponents/Scroll";
-import About from "./About";
-import Contact from "./Contact";
+import { Scroll } from "../components/uiComponents/Scroll";
+import { About } from "./About";
+import { Contact } from "./Contact";
 import { Projects } from "./Projects/Projects";
 
-export default function Home() {
+export const Home = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-light-bg dark:bg-dark-bg relative pt-24 md:pt-32 pb-10">
@@ -46,6 +46,7 @@ export default function Home() {
               <a
                 className="text-xl text-light-p dark:text-dark-p border border-light-p dark:border-dark-p p-2 font-bold rounded-md cursor-pointer select-none hover:bg-light-p hover:text-light-bg transition-all duration-300"
                 href="https://aayushsiwa.github.io/resume/resume.pdf"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 Resume
@@ -53,6 +54,7 @@ export default function Home() {
               <a
                 className="text-xl text-light-p dark:text-dark-p border border-light-p dark:border-dark-p p-2 font-bold rounded-md cursor-pointer select-none hover:bg-light-p hover:text-light-bg transition-all duration-300"
                 href="https://blog.aayushsiwa.is-a.dev"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 Blogs
@@ -68,4 +70,4 @@ export default function Home() {
       <Contact />
     </>
   );
-}
+};

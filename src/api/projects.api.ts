@@ -1,25 +1,27 @@
-import { createClient } from "@/lib/supabase/client";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { NewProject, Project, UpdateProject } from "@/types/Project";
 
-const getClient = () => createClient();
+// Supabase client is injected by callers (server or browser),
+// so this module does not create its own client instance.
 
-export async function fetchAllProjects(): Promise<Project[]> {
-  const supabase = getClient();
-
+export async function fetchAllProjects(
+  supabase: SupabaseClient,
+): Promise<Project[]> {
   const { data, error } = await supabase
     .from("projects")
     .select("*")
-    .order("created_at", { ascending: false })
-    .order("featured", { ascending: false });
+    .order("featured", { ascending: false })
+    .order("created_at", { ascending: false });
 
   if (error) throw new Error(error.message);
 
   return data ?? [];
 }
 
-export async function createProject(project: NewProject): Promise<Project> {
-  const supabase = getClient();
-
+export async function createProject(
+  supabase: SupabaseClient,
+  project: NewProject,
+): Promise<Project> {
   const { data, error } = await supabase
     .from("projects")
     .insert(project)
@@ -32,10 +34,13 @@ export async function createProject(project: NewProject): Promise<Project> {
 }
 
 export async function updateProject(
+  supabase: SupabaseClient,
   id: string,
   updates: UpdateProject,
 ): Promise<Project> {
-  const supabase = getClient();
+  if (Object.keys(updates).length === 0) {
+    console.warn("No updates provided");
+  }
 
   const { data, error } = await supabase
     .from("projects")
@@ -44,14 +49,15 @@ export async function updateProject(
     .select()
     .single();
 
-  if (error) throw new Error(error.message);
+  if (error) console.warn(error.message);
 
   return data;
 }
 
-export async function deleteProject(id: string): Promise<void> {
-  const supabase = getClient();
-
+export async function deleteProject(
+  supabase: SupabaseClient,
+  id: string,
+): Promise<void> {
   const { error } = await supabase.from("projects").delete().eq("id", id);
 
   if (error) throw new Error(error.message);

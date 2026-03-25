@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { Switch } from "./uiComponents/Switch";
 import { useTheme } from "next-themes";
-import Link from "vinext/shims/link";
+import Link from "next/link";
 
 export function NavBar() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -58,7 +58,7 @@ export function NavBar() {
           <li>
             <Link
               className="transition-all font-semibold hover:text-light-a dark:hover:text-dark-a"
-              href="projects"
+              href="/projects"
             >
               Projects
             </Link>
@@ -66,7 +66,7 @@ export function NavBar() {
           <li>
             <Link
               className="transition-all font-semibold hover:text-light-a dark:hover:text-dark-a"
-              href="contact"
+              href="/contact"
             >
               Contact
             </Link>
@@ -75,23 +75,31 @@ export function NavBar() {
             <Switch onClick={toggleDarkMode} isDarkMode={isDarkMode} />
           </li>
         </ul>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={30}
-          height={30}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="stroke-light-a dark:stroke-dark-a hover:stroke-light-p dark:hover:stroke-dark-p md:hidden"
+        <button
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded={isMenuOpen}
           onClick={handleMenuToggle}
+          className="md:hidden"
         >
-          <path d="M4 6l16 0" />
-          <path d="M4 12l16 0" />
-          <path d="M4 18l16 0" />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={30}
+            height={30}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="stroke-light-a dark:stroke-dark-a hover:stroke-light-p dark:hover:stroke-dark-p md:hidden"
+            onClick={handleMenuToggle}
+          >
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </button>
       </nav>
       <div
         className={`mobile-nav bg-light-bg/95 dark:bg-dark-bg/95 backdrop-blur-lg ${
@@ -128,7 +136,7 @@ export function NavBar() {
           </li>
           <li>
             <Link
-              href="#home"
+              href="#"
               className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -137,7 +145,7 @@ export function NavBar() {
           </li>
           <li>
             <Link
-              href="#about"
+              href="/#about"
               className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -146,7 +154,7 @@ export function NavBar() {
           </li>
           <li>
             <Link
-              href="#projects"
+              href="/#projects"
               className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -155,7 +163,7 @@ export function NavBar() {
           </li>
           <li>
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-light-txt dark:text-dark-txt hover:text-light-a dark:hover:text-dark-a transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

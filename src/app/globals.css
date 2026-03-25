@@ -35,14 +35,6 @@
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
     }
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
 }
 
 /*
@@ -94,7 +86,6 @@ body {
 
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
-    width: 8px;
     width: 8px;
 }
 

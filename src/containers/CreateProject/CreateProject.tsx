@@ -46,7 +46,13 @@ export function CreateProject({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
       {/* FORM */}
-      <div className="space-y-4">
+      <form
+        className="space-y-4"
+        onSubmit={(e) => {
+          e.preventDefault();
+          void handleSubmit();
+        }}
+      >
         <Input
           name="title"
           placeholder="Title"
@@ -130,7 +136,7 @@ export function CreateProject({
             </button>
           )}
         </div>
-      </div>
+      </form>
 
       {/* LIVE PREVIEW */}
       <div>

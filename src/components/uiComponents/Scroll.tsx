@@ -1,8 +1,7 @@
 "use client";
+import Link from "next/link";
 
-import Link from "vinext/shims/link";
-
-const Scroll = () => {
+export const Scroll = () => {
   return (
     <div className="animate-bounce animate-infinite animate-duration-1500 animate-ease-in-out">
       <Link href="#about">
@@ -20,5 +19,3 @@ const Scroll = () => {
     </div>
   );
 };
-
-export default Scroll;

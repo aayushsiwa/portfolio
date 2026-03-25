@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { Project, NewProject } from "@/types/Project";
 import { useProjects } from "@/lib/useProjects";
 import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "vinext/shims/router";
+import { useRouter } from "next/router";
 
 export function useAdminHooks() {
   const { projects, loading, error, addProject, editProject, removeProject } =
