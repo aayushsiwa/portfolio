@@ -7,6 +7,16 @@ interface ProjectCardProps {
   onDelete: (project: Project) => void;
 }
 
+/**
+ * Render an admin-facing project card that displays project details and provides Edit and Delete actions.
+ *
+ * The Delete action prompts the user with a confirmation dialog including the project's title; if confirmed, `onDelete` is invoked with the project.
+ *
+ * @param project - The project to display in the card
+ * @param onEdit - Callback invoked with the project when the Edit button is clicked
+ * @param onDelete - Callback invoked with the project when deletion is confirmed
+ * @returns The React element representing the project card with action buttons
+ */
 export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
   function handleDelete() {
     if (

@@ -9,6 +9,12 @@ type BaseInputProps = {
   className: string;
 };
 
+/**
+ * Render an input element wired for accessibility and an optional inline error message.
+ *
+ * @param props - Props for the input: includes `name`, `placeholder`, `value`, `onChange`, optional `error`, and optional `className`.
+ * @returns A JSX element containing the controlled `<input>` with `aria-invalid`/`aria-describedby` set when `error` is present, and a `<p role="alert">` showing the error message when provided.
+ */
 export function Input(props: BaseInputProps) {
   const { error, name, ...rest } = props;
   const errorId = error ? `${name}-error` : undefined;
@@ -30,6 +36,15 @@ export function Input(props: BaseInputProps) {
   );
 }
 
+/**
+ * Renders a controlled textarea input with built-in, accessible error display.
+ *
+ * When `error` is provided, the textarea receives `aria-invalid="true"` and
+ * `aria-describedby` pointing to `${name}-error`, and an adjacent `<p role="alert">`
+ * is rendered containing the error message.
+ *
+ * @returns A JSX element containing the textarea and an optional accessible error message.
+ */
 export function Textarea(props: BaseInputProps) {
   const { error, name, ...rest } = props;
   const errorId = error ? `${name}-error` : undefined;
@@ -63,6 +78,13 @@ type PrefixInputProps = {
   containerClass: string;
 };
 
+/**
+ * Renders a text input prefixed by a static label and shows an inline error message when provided.
+ *
+ * The input is a controlled field using `value` and `onChange`, and includes ARIA attributes that mark it as invalid and link it to the error message when present.
+ *
+ * @returns The JSX element for the prefixed input group with an optional error alert.
+ */
 export function PrefixInput({
   prefix,
   name,

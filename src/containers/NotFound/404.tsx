@@ -1,6 +1,14 @@
 "use client";
 import Link from "next/link";
 
+/**
+ * Renders a centered "404 — Page not found" UI with a primary link back to the site root.
+ *
+ * The layout includes a large "404" heading, a subtitle ("Oops! Page not found"), an
+ * explanatory paragraph, and a styled "Go Back Home" Link pointing to `/`.
+ *
+ * @returns A JSX element containing the complete 404 page layout.
+ */
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-dark-bg px-4">
