@@ -1,7 +1,37 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import vinext from "vinext";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
-// https://vitejs.dev/config/
+const requiredEnv = [
+  "NEXT_PUBLIC_SUPABASE_URL",
+  "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+] as const;
+
+for (const key of requiredEnv) {
+  if (!process.env[key]) {
+    throw new Error(
+      `missing required environment variable: ${key.split("_")[-1]}`,
+    );
+  }
+}
+
 export default defineConfig({
-  plugins: [react()],
+  define: {
+    "process.env.NEXT_PUBLIC_SUPABASE_URL": JSON.stringify(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    ),
+    "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY": JSON.stringify(
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    ),
+  },
+
+  plugins: [
+    vinext(),
+    cloudflare({
+      viteEnvironment: {
+        name: "rsc",
+        childEnvironments: ["ssr"],
+      },
+    }),
+  ],
 });

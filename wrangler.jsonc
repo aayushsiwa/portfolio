@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-03-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./worker/index.ts",
+  "assets": {
+    "not_found_handling": "none",
+    "binding": "ASSETS",
+  },
+  "images": {
+    "binding": "IMAGES",
+  },
+}

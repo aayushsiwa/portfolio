@@ -1,0 +1,53 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { NavBar } from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
+import { Bricolage_Grotesque, Mulish, Poppins } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+
+const mulish = Mulish({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-mulish",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+});
+
+export const metadata: Metadata = {
+  title: "Aayush Siwach",
+};
+
+/**
+ * Root layout component that sets global fonts and theme, and renders the site shell.
+ *
+ * @param children - The page content to render between the navigation bar and the footer
+ * @returns The root HTML structure containing global providers and the rendered page content
+ */
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${bricolage.variable} ${mulish.variable} ${poppins.variable} antialiased`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NavBar />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
