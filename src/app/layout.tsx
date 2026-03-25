@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   title: "Aayush Siwach",
 };
 
+/**
+ * Root layout component that sets global fonts and theme, and renders the site shell.
+ *
+ * @param children - The page content to render between the navigation bar and the footer
+ * @returns The root HTML structure containing global providers and the rendered page content
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

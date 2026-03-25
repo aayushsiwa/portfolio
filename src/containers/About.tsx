@@ -51,6 +51,15 @@ const tools = [
   "vitest",
 ];
 
+/**
+ * Render a labeled row of skill icons that match the current theme.
+ *
+ * Uses the resolved theme to select themed icon variants and delays rendering until the component is mounted to avoid server/client theme mismatches.
+ *
+ * @param label - The heading for the skill row (e.g., "Frontend")
+ * @param skills - Array of skill icon ids used to construct icon URLs (e.g., `["react", "vue"]`)
+ * @returns The rendered skill row as a JSX element, or `null` before client mount.
+ */
 function SkillRow({ label, skills }: { label: string; skills: string[] }) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
