@@ -5,6 +5,11 @@ import { Switch } from "./uiComponents/Switch";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
+/**
+ * Top fixed navigation bar that provides desktop navigation links, a theme toggle, and a responsive mobile menu.
+ *
+ * @returns The JSX element for the navigation bar, including desktop links, a theme switch control, and an accessible mobile menu overlay.
+ */
 export function NavBar() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);

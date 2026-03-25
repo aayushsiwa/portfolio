@@ -19,6 +19,20 @@ interface UseProjectsReturn {
   removeProject: (id: string) => Promise<void>;
 }
 
+/**
+ * Manages a list of projects with loading and error state and exposes CRUD operations.
+ *
+ * The hook fetches projects on mount and provides functions to refetch, add, edit, and remove projects; mutation functions update local state and surface API errors.
+ *
+ * @returns An object containing:
+ * - `projects` — the current array of `Project` items
+ * - `loading` — `true` while a fetch is in progress, `false` otherwise
+ * - `error` — a user-facing error message or `null`
+ * - `refetch` — reloads the project list
+ * - `addProject` — creates a new project and prepends it to the list (may throw on failure)
+ * - `editProject` — updates an existing project in-place by `id` (may throw on failure)
+ * - `removeProject` — deletes a project by `id` and removes it from the list (may throw on failure)
+ */
 export function useProjects(): UseProjectsReturn {
   const supabaseClient = supabaseBrowserClient;
   const [projects, setProjects] = useState<Project[]>([]);

@@ -13,6 +13,14 @@ interface CreateProjectProps {
   initialData?: Project;
 }
 
+/**
+ * Render a project creation/update form with a live preview and an optional cancel control.
+ *
+ * @param onSubmit - Callback invoked with the new or updated project data when the user submits the form
+ * @param onCancel - Optional callback invoked when the user cancels an update; the cancel button is shown only when `initialData` is provided
+ * @param initialData - Optional project used to populate the form and switch the UI into "Update" mode
+ * @returns The rendered form and live preview React element
+ */
 export function CreateProject({
   onSubmit,
   onCancel,

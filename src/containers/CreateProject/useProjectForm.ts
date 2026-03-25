@@ -14,6 +14,12 @@ export const EMPTY_PROJECT: NewProject = {
   featured: false,
 };
 
+/**
+ * Convert an optional `Project` into the `NewProject` shape used by the form.
+ *
+ * @param data - The source `Project`. When omitted, the form defaults are returned.
+ * @returns A `NewProject` object where `title`, `description`, `gh_repo`, `deployment`, and `img_src` default to `""` when absent, and `featured` defaults to `false`.
+ */
 function mapProjectToForm(data?: Project): NewProject {
   if (!data) return EMPTY_PROJECT;
   return {
@@ -39,6 +45,24 @@ interface UseProjectFormOptions {
   onSubmit: (data: NewProject) => Promise<void> | void;
 }
 
+/**
+ * Manage project create/edit form state, validation, conflict checking, and submission.
+ *
+ * Initializes form state from `initialData` and exposes handlers and derived state for editing a `NewProject`.
+ *
+ * @param initialData - Optional existing project used to populate the form; when omitted the form starts empty.
+ * @param projects - List of existing projects used to detect conflicts for certain fields.
+ * @param onSubmit - Callback invoked with validated `NewProject` data when the form is submitted.
+ * @returns An object containing:
+ *  - `form`: the current `NewProject` form state
+ *  - `errors`: a mapping of field names to validation or conflict messages
+ *  - `loading`: `true` while submission is in progress
+ *  - `isFormValid`: `true` when there are no errors and required fields are non-empty
+ *  - `handleChange`: input/textarea change handler
+ *  - `handleCheckboxChange`: checkbox change handler for the `featured` field
+ *  - `handleSubmit`: submission handler that validates, checks conflicts, and calls `onSubmit`
+ *  - `reset`: resets the form to `initialData` (or empty) and clears errors
+ */
 export function useProjectForm({
   initialData,
   projects,

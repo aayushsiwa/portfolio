@@ -5,6 +5,12 @@ import { NewProject, Project } from "@/types/Project";
 
 type ConflictErrors = Record<string, string>;
 
+/**
+ * Provide a memoized function to detect naming and URL conflicts between a proposed project and existing projects.
+ *
+ * @param projects - Array of existing projects to compare against
+ * @returns An object with `checkConflicts`, a function that accepts `(data: NewProject, excludeId?: string)` and returns a `ConflictErrors` record mapping field names (e.g., `title`, `gh_repo`, `deployment`, `img_src`) to descriptive conflict messages when duplicates are found
+ */
 export function useProjectConflicts(projects: Project[]) {
   const checkConflicts = useCallback(
     (data: NewProject, excludeId?: string): ConflictErrors => {
