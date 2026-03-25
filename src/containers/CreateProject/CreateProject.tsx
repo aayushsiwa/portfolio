@@ -13,6 +13,20 @@ interface CreateProjectProps {
   initialData?: Project;
 }
 
+/**
+ * Renders a create/update project form with live preview and validation-aware inputs.
+ *
+ * The form is driven by internal state from `useProjectForm` and reflects validation
+ * errors on inputs. When `initialData` is provided the form behaves as an edit mode;
+ * otherwise it behaves as a create mode. The primary action button is disabled while
+ * the form is invalid or submitting. If both `onCancel` and `initialData` are provided,
+ * a Cancel button resets the form and invokes `onCancel`.
+ *
+ * @param onSubmit - Handler invoked with the project data when the form is submitted
+ * @param onCancel - Optional callback invoked when the user cancels an edit (only shown in edit mode)
+ * @param initialData - Optional project used to populate the form for editing; absence indicates create mode
+ * @returns The form UI and a live preview card showing the current form values
+ */
 export function CreateProject({
   onSubmit,
   onCancel,

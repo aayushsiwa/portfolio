@@ -4,6 +4,12 @@ import { useLogin } from "./Login.hooks";
 export const Login = () => {
   const { handleLogin, errors, loading } = useLogin();
 
+  /**
+   * Builds the Tailwind CSS class string for an input by applying error or default border styles based on validation state.
+   *
+   * @param name - The input field key used to check for an entry in the `errors` object
+   * @returns The composed class string with base input classes and `border-red-500` if the field has an error, otherwise `border-gray-300`
+   */
   function inputClass(name: string) {
     return `border p-2 w-full rounded ${
       errors[name] ? "border-red-500" : "border-gray-300"

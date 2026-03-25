@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   title: "Aayush Siwach",
 };
 
+/**
+ * Compose the application's root HTML structure and provide global theming, fonts, navigation, and footer.
+ *
+ * @param children - The page content to render between the NavBar and Footer
+ * @returns The root `<html>` element containing a `<body>` that applies global font variables and a `ThemeProvider` wrapping `NavBar`, the provided `children`, and `Footer`
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -1,6 +1,11 @@
 "use client";
 import Link from "next/link";
 
+/**
+ * Render a centered 404 Not Found page with a heading, explanatory text, and a "Go Back Home" link to "/".
+ *
+ * @returns A JSX element containing a full-height centered container with the "404" heading, a subtitle, a descriptive paragraph, and a navigation link to the root path.
+ */
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-dark-bg px-4">

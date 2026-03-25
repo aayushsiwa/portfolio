@@ -8,9 +8,11 @@ export const PREFIX_MAP: Partial<Record<keyof NewProject, string>> = {
 };
 
 /**
- * Returns the suffix of `fullValue` after stripping `prefix`.
- * Falls back to the full value when the prefix isn't present
- * (handles legacy data stored without the expected prefix).
+ * Extracts the substring of `fullValue` that follows `prefix`, or returns `fullValue` unchanged when the prefix is not present.
+ *
+ * @param fullValue - The input string that may begin with `prefix`
+ * @param prefix - The prefix to remove if present
+ * @returns The substring after `prefix` when `fullValue` starts with `prefix`, otherwise `fullValue`
  */
 export function getSuffix(fullValue: string, prefix: string): string {
   return fullValue.startsWith(prefix)

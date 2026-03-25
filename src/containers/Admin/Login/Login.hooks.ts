@@ -16,6 +16,13 @@ export const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  /**
+   * Handle the login form submission: validate input, attempt authentication, update loading and error state, and redirect to the admin page on success.
+   *
+   * On validation failure, populates per-field errors. While authenticating, sets the loading state. If authentication fails, sets a `general` error message; if it succeeds, navigates to `/admin`.
+   *
+   * @param e - The form submit event from the login form
+   */
   async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 

@@ -19,6 +19,20 @@ interface UseProjectsReturn {
   removeProject: (id: string) => Promise<void>;
 }
 
+/**
+ * Manages a projects collection and exposes state plus CRUD actions backed by Supabase.
+ *
+ * Provides the current `projects` array, a `loading` flag for async operations, an `error` message when operations fail, and four async actions to `refetch`, `addProject`, `editProject`, and `removeProject`.
+ *
+ * @returns An object containing:
+ * - `projects`: the current list of `Project` items
+ * - `loading`: `true` while an operation is in progress, otherwise `false`
+ * - `error`: a user-facing error message or `null`
+ * - `refetch`: async function to reload all projects
+ * - `addProject`: async function to create and prepend a new project
+ * - `editProject`: async function to update an existing project by id
+ * - `removeProject`: async function to delete a project by id
+ */
 export function useProjects(): UseProjectsReturn {
   const supabaseClient = createClient();
   const [projects, setProjects] = useState<Project[]>([]);

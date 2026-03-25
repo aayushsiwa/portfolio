@@ -5,6 +5,13 @@ import { Switch } from "./uiComponents/Switch";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
+/**
+ * Render a fixed top navigation bar with responsive desktop links, a theme toggle, and a mobile slide-open menu.
+ *
+ * The component does not render during server-side rendering and returns `null` until the client has mounted.
+ *
+ * @returns The NavBar JSX element, or `null` before the component mounts on the client
+ */
 export function NavBar() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);

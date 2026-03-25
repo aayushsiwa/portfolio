@@ -51,6 +51,15 @@ const tools = [
   "vitest",
 ];
 
+/**
+ * Render a labeled row of skill icons using the active theme.
+ *
+ * The component uses the current theme to request icons from skillicons.dev and delays rendering until after the component mounts to avoid server/client theme mismatches.
+ *
+ * @param label - The category label displayed to the left of the icons (e.g., "Languages", "Frontend").
+ * @param skills - An array of skill keys used to build icon URLs (each value is appended to `https://skillicons.dev/icons?i=`).
+ * @returns A JSX element containing the label and a wrapped list of skill icons, or `null` until the component has mounted.
+ */
 function SkillRow({ label, skills }: { label: string; skills: string[] }) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);

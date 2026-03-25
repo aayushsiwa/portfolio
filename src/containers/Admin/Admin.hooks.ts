@@ -6,6 +6,20 @@ import { useProjects } from "@/lib/useProjects";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/router";
 
+/**
+ * Composes admin state and action handlers for managing projects in the admin UI.
+ *
+ * @returns An object with:
+ * - `projects`: the current list of projects
+ * - `loading`: whether projects are being loaded
+ * - `error`: any error encountered while loading projects
+ * - `editing`: the project currently being edited, or `null`
+ * - `handleSubmit`: a function that creates a new project or updates the currently edited project (accepts a `NewProject`)
+ * - `handleEdit`: a function that marks a given `Project` for editing
+ * - `handleDelete`: a function that removes a given `Project`
+ * - `handleCancel`: a function that cancels editing and clears the `editing` state
+ * - `logout`: a function that signs out the current user and navigates to the login page
+ */
 export function useAdminHooks() {
   const { projects, loading, error, addProject, editProject, removeProject } =
     useProjects();
