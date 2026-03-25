@@ -1,7 +1,7 @@
 import { FaGithub, FaHackerrank, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
-export default function Footer() {
+export const Footer: React.FC = () => {
   return (
     <footer className="bg-light-bg dark:bg-dark-bg py-20 w-full h-auto ps-4 flex justify-start items-center gap-4">
       <a
@@ -9,7 +9,7 @@ export default function Footer() {
         aria-label="LinkedIn"
         target="_blank"
         rel="noreferrer"
-        href="https://www.linkedin.com/in/aayush-siwach"
+        href="https://www.linkedin.com/in/aayushsiwa"
       >
         <FaLinkedin className="fill-light-a" />
       </a>
@@ -24,7 +24,7 @@ export default function Footer() {
       </a>
       <a
         className="text-4xl text-white hover:scale-125 transition-transform duration-200"
-        aria-label="GitHub"
+        aria-label="Leetcode"
         target="_blank"
         rel="noreferrer"
         href="https://leetcode.com/u/aayushsiwa/"
@@ -33,7 +33,7 @@ export default function Footer() {
       </a>
       <a
         className="text-4xl text-white hover:scale-125 transition-transform duration-200"
-        aria-label="GitHub"
+        aria-label="HackerRank"
         target="_blank"
         rel="noreferrer"
         href="https://www.hackerrank.com/profile/h22052177"
@@ -42,4 +42,4 @@ export default function Footer() {
       </a>
     </footer>
   );
-}
+};

@@ -1,0 +1,197 @@
+"use client";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { NewProject, Project } from "@/types/Project";
+import { projectSchema } from "./validations/project.schema";
+import { useProjectConflicts } from "./useProjectConflicts";
+import { PREFIX_MAP } from "./prefixes";
+
+export const EMPTY_PROJECT: NewProject = {
+  title: "",
+  description: "",
+  gh_repo: "",
+  deployment: "",
+  img_src: "",
+  featured: false,
+};
+
+/**
+ * Convert an optional `Project` into the `NewProject` shape used by the form.
+ *
+ * @param data - The source `Project`. When omitted, the form defaults are returned.
+ * @returns A `NewProject` object where `title`, `description`, `gh_repo`, `deployment`, and `img_src` default to `""` when absent, and `featured` defaults to `false`.
+ */
+function mapProjectToForm(data?: Project): NewProject {
+  if (!data) return EMPTY_PROJECT;
+  return {
+    title: data.title ?? "",
+    description: data.description ?? "",
+    gh_repo: data.gh_repo ?? "",
+    deployment: data.deployment ?? "",
+    img_src: data.img_src ?? "",
+    featured: data.featured ?? false,
+  };
+}
+
+const CONFLICT_FIELDS = new Set<keyof NewProject>([
+  "title",
+  "gh_repo",
+  "deployment",
+  "img_src",
+]);
+
+interface UseProjectFormOptions {
+  initialData?: Project;
+  projects: Project[];
+  onSubmit: (data: NewProject) => Promise<void> | void;
+}
+
+/**
+ * Manage project create/edit form state, validation, conflict checking, and submission.
+ *
+ * Initializes form state from `initialData` and exposes handlers and derived state for editing a `NewProject`.
+ *
+ * @param initialData - Optional existing project used to populate the form; when omitted the form starts empty.
+ * @param projects - List of existing projects used to detect conflicts for certain fields.
+ * @param onSubmit - Callback invoked with validated `NewProject` data when the form is submitted.
+ * @returns An object containing:
+ *  - `form`: the current `NewProject` form state
+ *  - `errors`: a mapping of field names to validation or conflict messages
+ *  - `loading`: `true` while submission is in progress
+ *  - `isFormValid`: `true` when there are no errors and required fields are non-empty
+ *  - `handleChange`: input/textarea change handler
+ *  - `handleCheckboxChange`: checkbox change handler for the `featured` field
+ *  - `handleSubmit`: submission handler that validates, checks conflicts, and calls `onSubmit`
+ *  - `reset`: resets the form to `initialData` (or empty) and clears errors
+ */
+export function useProjectForm({
+  initialData,
+  projects,
+  onSubmit,
+}: UseProjectFormOptions) {
+  const [form, setForm] = useState<NewProject>(() =>
+    mapProjectToForm(initialData),
+  );
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(false);
+  const submittingRef = useRef(false);
+
+  const { checkConflicts } = useProjectConflicts(projects);
+
+  useEffect(() => {
+    setForm(mapProjectToForm(initialData));
+    setErrors({});
+  }, [initialData]);
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      const fieldName = name as keyof NewProject;
+      const prefix = PREFIX_MAP[fieldName];
+      const fullValue = prefix && value.trim() !== "" ? prefix + value : value;
+
+      const updatedForm = { ...form, [fieldName]: fullValue };
+      setForm(updatedForm);
+
+      // Field-level schema validation
+      const fieldResult = projectSchema.shape[fieldName].safeParse(fullValue);
+
+      if (!fieldResult.success) {
+        setErrors((prev) => ({
+          ...prev,
+          [fieldName]: fieldResult.error.issues[0].message,
+        }));
+        return;
+      }
+
+      // Conflict check only for relevant fields with a value
+      if (CONFLICT_FIELDS.has(fieldName) && fullValue.trim() !== "") {
+        const normalizedForm = {
+          ...updatedForm,
+          [fieldName]: fieldResult.data,
+        } as NewProject;
+        const allConflicts = checkConflicts(normalizedForm, initialData?.id);
+        setErrors((prev) => {
+          const next = { ...prev };
+          delete next[fieldName];
+          if (allConflicts[fieldName])
+            next[fieldName] = allConflicts[fieldName];
+          return next;
+        });
+      } else {
+        setErrors((prev) => {
+          const next = { ...prev };
+          delete next[fieldName];
+          return next;
+        });
+      }
+    },
+    [form, checkConflicts, initialData?.id],
+  );
+
+  const handleCheckboxChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setForm((prev) => ({ ...prev, featured: e.target.checked }));
+    },
+    [],
+  );
+
+  const handleSubmit = useCallback(async () => {
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    const result = projectSchema.safeParse(form);
+
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.issues.forEach((err) => {
+        const key = err.path[0];
+        if (key) fieldErrors[String(key)] = err.message;
+      });
+      setErrors(fieldErrors);
+      submittingRef.current = false;
+      return;
+    }
+
+    // Race-condition safety: re-check conflicts right before submit
+    const conflicts = checkConflicts(result.data, initialData?.id);
+    if (Object.keys(conflicts).length > 0) {
+      setErrors(conflicts);
+      submittingRef.current = false;
+      return;
+    }
+
+    setErrors({});
+    setLoading(true);
+
+    try {
+      await onSubmit(result.data);
+      if (!initialData) setForm(EMPTY_PROJECT);
+    } finally {
+      submittingRef.current = false;
+      setLoading(false);
+    }
+  }, [form, checkConflicts, initialData, onSubmit]);
+
+  const reset = useCallback(() => {
+    setForm(mapProjectToForm(initialData));
+    setErrors({});
+  }, [initialData]);
+
+  const isFormValid = useMemo(() => {
+    if (Object.keys(errors).length > 0) return false;
+    const { title, description, gh_repo } = form;
+    return (
+      title.trim() !== "" && description.trim() !== "" && gh_repo.trim() !== ""
+    );
+  }, [form, errors]);
+
+  return {
+    form,
+    errors,
+    loading,
+    isFormValid,
+    handleChange,
+    handleCheckboxChange,
+    handleSubmit,
+    reset,
+  };
+}
