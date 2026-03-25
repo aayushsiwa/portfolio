@@ -21,14 +21,14 @@ export async function fetchAllProjects(
 export async function createProject(
   supabase: SupabaseClient,
   project: NewProject,
-): Promise<Project> {
+): Promise<Project | void> {
   const { data, error } = await supabase
     .from("projects")
     .insert(project)
     .select()
     .single();
 
-  if (error) throw new Error(error.message);
+  if (error) return;
 
   return data;
 }
@@ -37,9 +37,10 @@ export async function updateProject(
   supabase: SupabaseClient,
   id: string,
   updates: UpdateProject,
-): Promise<Project> {
+): Promise<Project | void> {
   if (Object.keys(updates).length === 0) {
     console.warn("No updates provided");
+    return;
   }
 
   const { data, error } = await supabase
@@ -49,7 +50,7 @@ export async function updateProject(
     .select()
     .single();
 
-  if (error) console.warn(error.message);
+  if (error) return;
 
   return data;
 }
@@ -60,5 +61,5 @@ export async function deleteProject(
 ): Promise<void> {
   const { error } = await supabase.from("projects").delete().eq("id", id);
 
-  if (error) throw new Error(error.message);
+  if (error) return;
 }

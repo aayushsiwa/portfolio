@@ -51,6 +51,7 @@ const Card = ({
               href={data.gh_repo}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`View source code for ${data.title}`}
               className="text-gray-800 dark:text-dark-a font-semibold no-underline hover:underline bg-light-s dark:bg-dark-s px-4 py-2 rounded-xl text-3xl transition-all duration-500 ease-in-out"
             >
               <FaCode />
@@ -63,6 +64,7 @@ const Card = ({
                 href={data.deployment}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View live deployment for ${data.title}`}
                 className="text-gray-800 dark:text-dark-a font-semibold no-underline hover:underline bg-light-s dark:bg-dark-s px-4 py-2 rounded-xl text-3xl transition-all duration-500 ease-in-out"
               >
                 <MdOutput />

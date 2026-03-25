@@ -11,10 +11,7 @@ type BaseInputProps = {
 
 export function Input(props: BaseInputProps) {
   const { error, name, ...rest } = props;
-  const errorId = error
-    ? `
-  ${name}-error`
-    : undefined;
+  const errorId = error ? `${name}-error` : undefined;
 
   return (
     <div>
@@ -35,10 +32,7 @@ export function Input(props: BaseInputProps) {
 
 export function Textarea(props: BaseInputProps) {
   const { error, name, ...rest } = props;
-  const errorId = error
-    ? `
-  ${name}-error`
-    : undefined;
+  const errorId = error ? `${name}-error` : undefined;
 
   return (
     <div>
@@ -78,10 +72,7 @@ export function PrefixInput({
   onChange,
   containerClass,
 }: PrefixInputProps) {
-  const errorId = error
-    ? `
-  ${name}-error`
-    : undefined;
+  const errorId = error ? `${name}-error` : undefined;
   return (
     <div>
       <div className={containerClass}>

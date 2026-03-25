@@ -112,7 +112,7 @@ export function CreateProject({
 
         <div className="flex gap-3">
           <button
-            onClick={handleSubmit}
+            type="submit"
             disabled={!isFormValid || loading}
             className="bg-black text-white px-6 py-3 rounded-lg disabled:opacity-50 transition-opacity"
           >

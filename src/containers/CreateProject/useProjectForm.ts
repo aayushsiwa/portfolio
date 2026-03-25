@@ -81,7 +81,11 @@ export function useProjectForm({
 
       // Conflict check only for relevant fields with a value
       if (CONFLICT_FIELDS.has(fieldName) && fullValue.trim() !== "") {
-        const allConflicts = checkConflicts(updatedForm, initialData?.id);
+        const normalizedForm = {
+          ...updatedForm,
+          [fieldName]: fieldResult.data,
+        } as NewProject;
+        const allConflicts = checkConflicts(normalizedForm, initialData?.id);
         setErrors((prev) => {
           const next = { ...prev };
           delete next[fieldName];
