@@ -29,14 +29,14 @@ The home page is a single scrollable page composed of four sections:
 
 - **Hero** — introduction, LinkedIn, GitHub, resume and blog links.
 - **About** — bio and skill icons (languages, frontend, backend, tools).
-- **Projects** — cards fetched live from Supabase, featured projects marked with a ⭐.
+- **Projects** — cards fetched live from Supabase, with an optional featured flag managed via the admin dashboard.
 - **Contact** — LinkedIn and email links.
 
 ---
 
 ## Admin Dashboard (`/admin`)
 
-The admin route is protected by Next.js middleware. Any unauthenticated request to `/admin` is redirected to `/login` automatically.
+The admin route requires authentication. Any unauthenticated request to `/admin` is redirected to `/login` automatically.
 
 Once logged in, the dashboard provides full CRUD management for projects.
 
@@ -48,12 +48,12 @@ Once logged in, the dashboard provides full CRUD management for projects.
   - GitHub repo URL — with `https://github.com/` shown as a fixed left-side prefix
   - Live URL *(optional)* — with `https://` prefix
   - Image URL — with `https://raw.githubusercontent.com/` prefix
-  - Featured toggle (starred on the public site)
+  - Featured toggle (marks projects as featured in the dashboard and data)
 - **Live preview** — the project card updates in real time as you type.
 - **Conflict detection** — duplicate title, GitHub URL, live URL, or image URL is flagged inline on every keystroke, before you can submit.
 - **Edit a project** — click Edit on any card to load its data back into the form. Clicking Edit scrolls automatically to the top of the page. A Cancel button lets you exit edit mode without saving.
 - **Delete a project** — a confirmation dialog shows the project name before deleting.
-- **Featured badge** — projects with `featured: true` display a yellow ⭐ badge on their card.
+- **Featured badge** — projects with `featured: true` display a yellow ⭐ badge on their card in the admin dashboard.
 - **Logout** — ends the Supabase session and redirects to `/login`.
 
 ---
@@ -94,7 +94,7 @@ pnpm start
 
 ## Project Structure
 
-```
+```text
 src/
 ├── app/
 │   ├── page.tsx          # Home page
@@ -112,5 +112,5 @@ src/
 │   └── supabase/         # Browser and server Supabase clients
 ├── types/
 │   └── Project.ts        # Project and NewProject types
-└── middleware.ts          # Auth guard for /admin routes
+└── proxy.ts              # Auth guard for /admin routes
 ```
