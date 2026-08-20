@@ -46,3 +46,5 @@ dist
 venv
 __pycache__
 *.tsbuildinfo
+.vinext/
+.wrangler/
