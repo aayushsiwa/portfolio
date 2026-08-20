@@ -3,9 +3,9 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - 'regression'
-      - 'master'
-      - 'dev'
+      - "regression"
+      - "master"
+      - "dev"
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
@@ -39,7 +39,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: Deploy to Cloudflare Workers
-        run: pnpm vinext deploy
+        run: npx @vinext/cloudflare deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
