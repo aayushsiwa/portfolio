@@ -11,6 +11,11 @@
   "images": {
     "binding": "IMAGES",
   },
-
   "cache": { "enabled": true },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+  },
 }
